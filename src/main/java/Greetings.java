@@ -39,20 +39,24 @@ public class Greetings {
         System.out.println(greet2.addUsers("Sipho", 22));
         System.out.println(greet3.addUsers("Sakhi", 1));
         System.out.println(greet.addUsers("Sakhi", 1));
-
-//        System.out.println(greet.users.keySet());
+        Greetings greets = new Greetings();
+        System.out.println(greet.users.keySet());
+        System.out.println(greets.greets("Mzwa", "IsiXhosa"));
 
     }
 
 //----I WANT TO CREATE A METHOD THAT WILL RETURN NAMES +++ LANGUAGES --------
     public String greets(String username, String language){
         if(language == "IsiXhosa"){
-            String greetPerson = "Molo " + username;
-            return greetPerson;
+            String.format("Molo %s", username);
+            System.out.println(String.format("Molo %s", username, "!"));
         }
-//        else if (language == "English"){
-//            String greetPerson = "Hello %s", username;
-//        }
+        else if (language == "English"){
+            String.format("Hello %s", username, "!");
+        }else if(language == "Afrikaans"){
+            String.format("goeie dag %s", username, "!");
+        }
+           return String.format("Add a Language!");
     }
 //-----------------------   TEST   USING   MAIN   --------------------
 // -----------------------
