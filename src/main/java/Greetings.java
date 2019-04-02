@@ -41,22 +41,21 @@ public class Greetings {
         System.out.println(greet.addUsers("Sakhi", 1));
         Greetings greets = new Greetings();
         System.out.println(greet.users.keySet());
-        System.out.println(greets.greets("Mzwa", "IsiXhosa"));
+        System.out.println(greets.greets("Mzwa", "English"));
 
     }
 
 //----I WANT TO CREATE A METHOD THAT WILL RETURN NAMES +++ LANGUAGES --------
     public String greets(String username, String language){
         if(language == "IsiXhosa"){
-            String.format("Molo %s", username);
-            System.out.println(String.format("Molo %s", username, "!"));
+           return String.format("Molo %s", username,"%s!");
         }
         else if (language == "English"){
-            String.format("Hello %s", username, "!");
-        }else if(language == "Afrikaans"){
-            String.format("goeie dag %s", username, "!");
+            return String.format("Hello %s", username, "%s!");
+        }else if(language == ""){
+            return String.format("Enter A language You Want To Be Greeted In! %s", username);
         }
-           return String.format("Add a Language!");
+        return username;
     }
 //-----------------------   TEST   USING   MAIN   --------------------
 // -----------------------
