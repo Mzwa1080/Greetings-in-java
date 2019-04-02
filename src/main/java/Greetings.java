@@ -1,11 +1,12 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Greetings {
 //    I need a var list to store names
 //    the username should add a string of a selected language type
 //    I need a counter for each person greeted - so I need a method n if statement that will increment if same name == same name
 
-    private HashMap<String, Integer> users = new HashMap<String, Integer>();
+    private Map<String, Integer> users = new HashMap<String, Integer>();
     // WILL GET THE SIZE OF ALL USERS
    //WILL COUNT FOR SAME USER ENTERED AND INCREMENT BY ONE IF REPEATED
      //EACH PERSON --- I'LL PUSH HIM TO USERS
@@ -18,13 +19,13 @@ public class Greetings {
 //***** I NEED A ENUM(extended) THAT WILL HAVE TYPES OF LANGUAGES AND A CLASS OVERRIDING THOSE LANGUAGES BY ADDING ****
 //******************* BY ADDING ANY NAME + SELECTED LANGUAGE *********************
 
-    public HashMap<String, Integer> addUsers(String name, int counter){
+    public Map<String, Integer> addUsers(String name, int counter){
         int counterForEachPerson = counter;
         if(users.size() == 0 ){
             users.put(name, counterForEachPerson);
-            if(users.containsKey(users==users)){
-                counterForEachPerson++;
-            }
+        }
+        for(Map.Entry<String, Integer>perUsername : users.entrySet()) {
+            System.out.println(perUsername.getKey() +"<--Key---=---Value-->" +perUsername.getValue());
         }
         return users;
     }
@@ -39,8 +40,10 @@ public class Greetings {
         System.out.println(greet2.addUsers("Sipho", 22));
         System.out.println(greet3.addUsers("Sakhi", 1));
         System.out.println(greet.addUsers("Sakhi", 1));
+//        System.out.println(greet.users.get(users.));
+
+
         Greetings greets = new Greetings();
-        System.out.println(greet.users.keySet());
         System.out.println(greets.greets("Mzwa", "English"));
 
     }
