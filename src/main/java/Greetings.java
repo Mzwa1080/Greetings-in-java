@@ -25,12 +25,26 @@ public class Greetings {
             users.put(name, counterForEachPerson);
         }
         for(Map.Entry<String, Integer>perUsername : users.entrySet()) {
-            System.out.println(perUsername.getKey() +"<--Key---=---Value-->" +perUsername.getValue());
+            System.out.println(perUsername.getKey() +"=" +perUsername.getValue());
         }
         return users;
     }
 
-//--**-- HERE I WANT TO RETURN ALL THE USERS THAT ARE ADDED --**--//
+//----I WANT TO CREATE A METHOD THAT WILL RETURN NAMES +++ LANGUAGES --------
+    public String greets(String username, String language){
+        if(language == "IsiXhosa"){
+           return String.format("Molo %s", username,"%s!");
+        }
+        else if (language == "English"){
+            return String.format("Hello %s", username, "%s!");
+        }else if(language == ""){
+            return String.format("Enter A language You Want To Be Greeted In! %s", username);
+        }
+        return username;
+    }
+
+
+    //--**-- HERE I WANT TO RETURN ALL THE USERS THAT ARE ADDED --**--//
     public static void main(String [] args){
         Greetings greet = new Greetings();
         Greetings greet2 = new Greetings();
@@ -47,19 +61,4 @@ public class Greetings {
         System.out.println(greets.greets("Mzwa", "English"));
 
     }
-
-//----I WANT TO CREATE A METHOD THAT WILL RETURN NAMES +++ LANGUAGES --------
-    public String greets(String username, String language){
-        if(language == "IsiXhosa"){
-           return String.format("Molo %s", username,"%s!");
-        }
-        else if (language == "English"){
-            return String.format("Hello %s", username, "%s!");
-        }else if(language == ""){
-            return String.format("Enter A language You Want To Be Greeted In! %s", username);
-        }
-        return username;
-    }
-//-----------------------   TEST   USING   MAIN   --------------------
-// -----------------------
 }
