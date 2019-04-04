@@ -39,8 +39,10 @@ public class Greeter {
 //        users.remove(user);
 //        IF USER IN THE LIST IS 2X REMOVE THE USER AND DECREEMENNT THE COUNTER
 //        ELSE REMOVE EACH USER
-        if(users.containsKey(user)){
-            users.remove(user);
+        System.out.println(users.containsKey(user));
+        if(users.containsValue(user)){
+            System.out.println(users.containsValue(user));
+//            users.remove(users.containsValue(user));
         }
         return users;
     }
