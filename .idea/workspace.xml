@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36bf9087-c8ba-4a18-8959-414e91f970b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/greet/Greeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greet/Greeter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GreetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/greet/Greeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greet/Greeter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GreetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GreetTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,17 +26,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="150">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/GreetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+            <state relative-caret-position="132">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greeter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-33">
-              <caret line="23" column="34" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="34" />
+            <state relative-caret-position="269">
+              <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
               <folding>
                 <element signature="e#124#125#0" expanded="true" />
                 <element signature="e#153#154#0" expanded="true" />
@@ -81,8 +78,8 @@
         <option value="$PROJECT_DIR$/src/test/java/Greet.java" />
         <option value="$PROJECT_DIR$/src/main/java/greet/Greet.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/greet/Greeter.java" />
         <option value="$PROJECT_DIR$/src/test/java/GreetTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/greet/Greeter.java" />
       </list>
     </option>
   </component>
@@ -137,6 +134,19 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="greet" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="greet-in-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greet-in-java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="greet-in-java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="greet-in-java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -146,7 +156,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554387069798" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554389011812" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../keep/greet-in-java" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -167,13 +177,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GreetTest.clearUser">
-    <configuration name="GreetTest.addUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GreetTest.clearUserEach">
+    <configuration name="All in greet-in-java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="greet-in-java" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GreetTest" />
-      <option name="METHOD_NAME" value="addUsers" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -198,11 +206,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GreetTest.countEveryone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GreetTest.clearUserEach" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="greet-in-java" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="GreetTest" />
-      <option name="METHOD_NAME" value="countEveryone" />
+      <option name="METHOD_NAME" value="clearUserEach" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GreetTest.clearUserEach" />
+        <item itemvalue="JUnit.All in greet-in-java" />
         <item itemvalue="JUnit.GreetTest.clearUser" />
         <item itemvalue="JUnit.GreetTest.howManyTimesSingleUserRepeated" />
         <item itemvalue="JUnit.GreetTest.addUsersAndGetUsers" />
-        <item itemvalue="JUnit.GreetTest.countEveryone" />
-        <item itemvalue="JUnit.GreetTest.addUsers" />
       </list>
     </recent_temporary>
   </component>
@@ -242,35 +250,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 12m 59s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 34m 31s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 15m 28s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 35m 46s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 16m 04s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 36m 00s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 27m 32s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 37m 24s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 32m 38s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 38m 44s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 47m 07s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="All_in_greet-in-java - 2019.04.04 at 16h 38m 59s.xml">
+      <configuration name="All in greet-in-java" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 47m 35s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 39m 13s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 59m 41s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 39m 51s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 59m 53s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 40m 33s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 16h 01m 24s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    <history-entry file="GreetTest_clearUserEach - 2019.04.04 at 16h 43m 36s.xml">
+      <configuration name="GreetTest.clearUserEach" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -306,13 +314,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375">
@@ -320,25 +321,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greeter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="e#124#125#0" expanded="true" />
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GreetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+        <state relative-caret-position="132">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greeter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+          <folding>
+            <element signature="e#124#125#0" expanded="true" />
+            <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
           </folding>
         </state>
       </provider>

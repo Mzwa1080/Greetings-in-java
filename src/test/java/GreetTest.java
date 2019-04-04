@@ -61,7 +61,7 @@ public class GreetTest<before> {
 
 
     @Test
-    public void clearUser(){
+    public void clearAllUsers(){
         Greeter clearUsers = new Greeter();
         clearUsers.addUsers("Shawn");
         clearUsers.addUsers("John");
@@ -75,6 +75,20 @@ public class GreetTest<before> {
     }
 
     @Test
+    public void clearUserEach(){
+        Greeter clearUser = new Greeter();
+        clearUser.addUsers("Mzwa");
+        clearUser.addUsers("Mzwa");
+        clearUser.addUsers("Mzwa");
+        clearUser.addUsers("Mzwa");
 
+        clearUser.addUsers("Shawn");
+        clearUser.addUsers("Sakhi");
+
+//        clearUser.clearPerUser("Mzwa");
+        System.out.println(clearUser.clearPerUser("Mzwa"));
+//        System.out.println(clearUser.getGreetedUsers().keySet().toString());
+        assertEquals(1,1);
+    }
 
 }

@@ -35,6 +35,16 @@ public class Greeter {
         users.clear();
     }
 
+    public Map<String, Integer> clearPerUser(String user) {
+//        users.remove(user);
+//        IF USER IN THE LIST IS 2X REMOVE THE USER AND DECREEMENNT THE COUNTER
+//        ELSE REMOVE EACH USER
+        if(users.containsKey(user)){
+            users.remove(user);
+        }
+        return users;
+    }
+
 //    public Integer cleaPerUser(String user){
 //        System.out.println(users.remove(user));
 //        return users.remove(users.remove(user));
