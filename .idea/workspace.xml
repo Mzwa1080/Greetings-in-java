@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="36bf9087-c8ba-4a18-8959-414e91f970b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/greet/Greet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greet/Greet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/greet/Greeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/greet/Greeter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GreetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/greet/Greet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greet/Greet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/greet/Greeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/greet/Greeter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/GreetTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GreetTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,8 +38,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/GreetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-828">
-              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+            <state relative-caret-position="252">
+              <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,11 +50,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greeter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+            <state relative-caret-position="-33">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="34" />
               <folding>
                 <element signature="e#124#125#0" expanded="true" />
                 <element signature="e#153#154#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#736#737#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +81,8 @@
         <option value="$PROJECT_DIR$/src/test/java/Greet.java" />
         <option value="$PROJECT_DIR$/src/main/java/greet/Greet.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/GreetTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/greet/Greeter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/GreetTest.java" />
       </list>
     </option>
   </component>
@@ -142,7 +146,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554384754712" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554387069798" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../keep/greet-in-java" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -238,24 +242,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 08m 26s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 09m 31s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 09m 53s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 10m 18s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 11m 02s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 11m 14s.xml">
-      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 12m 59s.xml">
       <configuration name="GreetTest.clearUser" configurationId="JUnit" />
     </history-entry>
@@ -266,6 +252,24 @@
       <configuration name="GreetTest.clearUser" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 27m 32s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 32m 38s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 47m 07s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 47m 35s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 59m 41s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 15h 59m 53s.xml">
+      <configuration name="GreetTest.clearUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetTest_clearUser - 2019.04.04 at 16h 01m 24s.xml">
       <configuration name="GreetTest.clearUser" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -318,19 +322,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/greet/Greeter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+        <state relative-caret-position="-33">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="34" />
           <folding>
             <element signature="e#124#125#0" expanded="true" />
             <element signature="e#153#154#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/GreetTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-828">
-          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        <state relative-caret-position="252">
+          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

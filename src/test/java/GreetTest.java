@@ -62,18 +62,19 @@ public class GreetTest<before> {
 
     @Test
     public void clearUser(){
-        Greeter clear = new Greeter();
-        clear.addUsers("Shawn");
-        clear.addUsers("John");
-        clear.addUsers("Sakhi");
-        clear.addUsers("Mzwa");
-        clear.addUsers("Mzwa");
+        Greeter clearUsers = new Greeter();
+        clearUsers.addUsers("Shawn");
+        clearUsers.addUsers("John");
+        clearUsers.addUsers("Sakhi");
+        clearUsers.addUsers("Mzwa");
+        clearUsers.addUsers("Mzwa");
 
-        System.out.println(clear.clearAllUsers());;
+        clearUsers.clearAllUsers();
 
-        assertEquals(0, 0);
+        assertEquals(clearUsers.getCountForAllUsers(), 0);
     }
 
+    @Test
 
 
 }

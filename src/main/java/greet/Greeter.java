@@ -31,11 +31,8 @@ public class Greeter {
         return everyone;
     }
 
-    public int clearAllUsers() {
-        Map<String, Integer>del = users;
-        System.out.println(del.remove(users));
-//        users.clear();
-        return 1;
+    public void clearAllUsers() {
+        users.clear();
     }
 
 //    public Integer cleaPerUser(String user){
