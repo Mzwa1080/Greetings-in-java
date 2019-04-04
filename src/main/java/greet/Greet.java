@@ -27,35 +27,6 @@ public class Greet {
         return String.format("Type your name %s!!!" , userName.toUpperCase() + " with a language!");
     }
 
-    public Map<String, Integer> addUsers(String perUser){
-//           count++;
-
-        if(users.containsKey(perUser)){
-            int count = users.get(perUser);
-            users.put(perUser, count + 1);
-        }
-        else {
-            users.put(perUser,1);
-        }
-        return users;
-    }
-
-
-//    public static void main(String[] args){
-//        greet.Greet test = new greet.Greet("Mzwa", "English");
-//
-//        System.out.println(test.addUsers("Mzwa"));
-//        System.out.println(test.addUsers("Mzwa"));
-//        System.out.println(test.addUsers("Shawwn"));
-//        System.out.println(test.addUsers("Bhuta"));
-//
-//    }
-
-
-    public int getCountForAllUsers(){
-        int count = users.size();
-        return count;
-    }
 
 //        public int getCountForEachUser(String user){
 ////-------IT MUST CHECK THE NAME IN THE LIST IF ITS THERE AND COUNT IT HOW MANY TIMES IT HAS BEEN ENTERED
