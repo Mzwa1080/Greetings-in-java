@@ -26,36 +26,35 @@ public class Greeter {
         return count;
     }
 
-    public Map<String, Integer>getGreetedUsers(){
-        Map<String, Integer> everyone = users;
-        return everyone;
+    public int getCountForUser(String user){
+        return users.get(user);
     }
 
     public void clearAllUsers() {
         users.clear();
     }
 
-    public Map<String, Integer> clearPerUser(String user) {
-//        users.remove(user);
-//        IF USER IN THE LIST IS 2X REMOVE THE USER AND DECREEMENNT THE COUNTER
-//        ELSE REMOVE EACH USER
-        System.out.println(users.containsKey(user));
-        if(users.containsValue(user)){
-            System.out.println(users.containsValue(user));
-//            users.remove(users.containsValue(user));
-        }
-        return users;
+    public int clearPerUser(String user) {
+        return users.remove(user);
     }
 
-//    public Integer cleaPerUser(String user){
-//        System.out.println(users.remove(user));
-//        return users.remove(users.remove(user));
-//    }
+    public String clearUsersValue(String user){
+        //DELETE THE USER VALUE
+        int keep = users.get(user); //GETS ALL THE USER'S VALUE
+        System.out.printf("Gets all values : --> "+ keep);
 
-//    public Map<String, Integer> howManySingleUserBeenGreeted(Map<String, Integer> eachUser){
-//    Map<String,Integer>demo = eachUser;
-//    return demo;
-//    }
+
+        System.out.println("----------------------------------------------------------------");
+
+
+        System.out.println(keep--);
+
+//        System.out.println();
+//        System.out.println();
+//        System.out.println(users.containsValue(keep));
+        return "I want to decrement the value of the guy";
+    }
+    ///I MUST CLEAR THE VALUE BY -1
 
 
 }
