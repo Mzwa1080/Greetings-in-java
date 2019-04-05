@@ -38,23 +38,23 @@ public class Greeter {
         return users.remove(user);
     }
 
-    public String clearUsersValue(String user){
-        //DELETE THE USER VALUE
-        int keep = users.get(user); //GETS ALL THE USER'S VALUE
-        System.out.printf("Gets all values : --> "+ keep);
-
-
-        System.out.println("----------------------------------------------------------------");
-
-
-        System.out.println(keep--);
-
-//        System.out.println();
-//        System.out.println();
-//        System.out.println(users.containsValue(keep));
-        return "I want to decrement the value of the guy";
-    }
-    ///I MUST CLEAR THE VALUE BY -1
+//    public String clearUsersValue(String user){
+//        //DELETE THE USER VALUE
+//        int keep = users.get(user); //GETS ALL THE USER'S VALUE
+//        System.out.printf("Gets all values : --> "+ keep);
+//
+//
+//        System.out.println("----------------------------------------------------------------");
+//
+//
+//        System.out.println((keep) -- );
+//
+////        System.out.println();
+////        System.out.println();
+////        System.out.println(users.containsValue(keep));
+//        return "I want to decrement the value of the guy";
+//    }
+//    ///I MUST CLEAR THE VALUE BY -1
 
 
 }

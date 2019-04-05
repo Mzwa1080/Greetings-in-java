@@ -83,20 +83,20 @@ public class GreetTest<before> {
         assertEquals(clearUser.getCountForAllUsers(),2);
     }
 
-    @Test
-    public void clearUserValue(){
-        Greeter clearValue  = new Greeter();
-        clearValue.addUsers("Mzwa");
-        clearValue.addUsers("Mzwa");
-        clearValue.addUsers("Mzwa");
-        clearValue.addUsers("Shawn");
-        clearValue.addUsers("Shawn");
-
-        System.out.println(clearValue.clearUsersValue("Mzwa"));
-        System.out.println(clearValue.clearUsersValue("Mzwa"));
-
-
-        assertEquals(1,1);
-    }
+//    @Test
+//    public void clearUserValue(){
+//        Greeter clearValue  = new Greeter();
+//        clearValue.addUsers("Mzwa");
+//        clearValue.addUsers("Mzwa");
+//        clearValue.addUsers("Mzwa");
+//        clearValue.addUsers("Shawn");
+//        clearValue.addUsers("Shawn");
+//
+//        System.out.println(clearValue.clearUsersValue("Mzwa"));
+//        System.out.println(clearValue.clearUsersValue("Mzwa"));
+//
+//
+//        assertEquals(1,1);
+//    }
 
 }

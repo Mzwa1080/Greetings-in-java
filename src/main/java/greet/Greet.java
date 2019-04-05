@@ -28,14 +28,12 @@ public class Greet {
     }
 
 
-//        public int getCountForEachUser(String user){
-////-------IT MUST CHECK THE NAME IN THE LIST IF ITS THERE AND COUNT IT HOW MANY TIMES IT HAS BEEN ENTERED
-////------ I MUST HAVE A COUNTER SET TO EQUAL TO ZERO
-////----- IF THE >>USERS<< CONTAINKEY OF >>USER PARAM<< SHOULD RETURN THE COUNTER NUMBER
-//
-//        int counter = users.get(user); //2  counter++
-//        return counter;
-//    }
 
+    public static void main(String args[]){
+        Greet name  =  new Greet("Shawn", "English");
+        Scanner username = new Scanner(System.in);
+        String ret = name.greetInLanguage() + username.next();
+        System.out.println(ret);
+    }
 
 }
