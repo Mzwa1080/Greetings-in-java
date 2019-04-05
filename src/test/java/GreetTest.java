@@ -1,9 +1,8 @@
 import greet.Greet;
 import greet.Greeter;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class GreetTest {
 
@@ -53,7 +52,6 @@ public class GreetTest {
 //        assertEquals(user1.getCountForAllUsers(),4);
 //    }
 
-//    ------ VALUES OF THE >>>>>>>>USERS<<<<<<<<<<<<<<
     @Test
     public void howManyTimesSingleUserRepeated(){
         Greeter user1 = new Greeter();
