@@ -4,14 +4,17 @@ import java.util.*;
 
 public class Greet {
     private String userName,lang;
-    private Map<String, Integer> users;
+//    private Map<String, Integer> users;
 //    private int count;
 
     public Greet(String name, String language){
         userName = name;
         lang = language;
-        users = new HashMap<String, Integer>();
+//        users = new HashMap<String, Integer>();
     }
+
+
+
 
     public String greetInLanguage(){
         if(lang == "IsiXhosa"){
@@ -30,10 +33,13 @@ public class Greet {
 
 
     public static void main(String args[]){
-        Greet name  =  new Greet("Shawn", "English");
-        Scanner username = new Scanner(System.in);
-        String ret = name.greetInLanguage() + username.next();
-        System.out.println(ret);
+        Scanner scan = new Scanner(System.in);
+        Greet name = new Greet("Mzwa", "English");
+        System.out.println(name.lang + scan.nextLine());
     }
+
+//What ever its in the scanner or typed === must be the one added with the language && name should be added to list
+//     Then it should be printed out both of them
+
 
 }

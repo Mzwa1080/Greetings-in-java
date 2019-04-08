@@ -25,6 +25,15 @@ public class GreetTest {
     }
 
     @Test
+    public void getAllUsers(){
+        Greeter user = new Greeter();
+        user.addUsers("Mzwa");
+
+//        assertArrayEquals(user.addUsers("Mzwa"), true);
+    }
+
+
+    @Test
     public void addUsersAndCountEveryUser(){
         Greeter user = new Greeter();
          user.addUsers("Mzwa");
@@ -33,24 +42,6 @@ public class GreetTest {
 
         assertEquals(user.getCountForAllUsers(),3);
     }
-
-//    @Test
-//    public void countEveryone(){
-//        Greeter user1 = new Greeter();
-//        user1.addUsers("Mzwa");
-//        user1.addUsers("Mzwa");
-//        user1.addUsers("Mzwa");
-//        user1.addUsers("Mzwa");
-//
-//        user1.addUsers("Bhuta");
-//        user1.addUsers("Shawn");
-//        user1.addUsers("Tzoo");
-//
-////        System.out.println(user1.addUsers("Mzwa")); //Checking how many users are there
-////        System.out.println(user1.getCountForAllUsers());
-//
-//        assertEquals(user1.getCountForAllUsers(),4);
-//    }
 
     @Test
     public void howManyTimesSingleUserRepeated(){
