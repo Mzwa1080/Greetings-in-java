@@ -6,23 +6,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GreetTest {
 
-    @Test
-    public void greetUsersInIsixhosa() {
-        Greet name = new Greet("Mzwa", "IsiXhosa");
-        assertEquals("Molo Mzwa!", name.greetInLanguage());
-    }
-
-    @Test
-    public void greetUserInEnglish(){
-        Greet greetInEnglish = new Greet("Shawn", "English");
-        assertEquals("Hello Shawn!", greetInEnglish.greetInLanguage());
-    }
-
-    @Test
-    public void greetUserInAfrikaans(){
-        Greet greetInAfrikaans = new Greet("Mzwa", "Afrikaans");
-        assertEquals("Goeie dag Mzwa!", greetInAfrikaans.greetInLanguage());
-    }
+//    @Test
+//    public void greetUsersInIsixhosa() {
+//        Greet name = new Greet("Mzwa", "IsiXhosa");
+//        assertEquals("Molo Mzwa!", name.greetInLanguage());
+//    }
+//
+//    @Test
+//    public void greetUserInEnglish(){
+//        Greet greetInEnglish = new Greet("Shawn", "English");
+//        assertEquals("Hello Shawn!", greetInEnglish.greetInLanguage());
+//    }
+//
+//    @Test
+//    public void greetUserInAfrikaans(){
+//        Greet greetInAfrikaans = new Greet("Mzwa", "Afrikaans");
+//        assertEquals("Goeie dag Mzwa!", greetInAfrikaans.greetInLanguage());
+//    }
 
     @Test
     public void getAllUsers(){

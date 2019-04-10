@@ -23,10 +23,12 @@ public class Greeter {
 
     public int getCountForAllUsers(){
         int count = users.size();
+        System.out.println(count);
         return count;
     }
 
     public int getCountForUser(String user){
+        System.out.println(users.get(user));
         return users.get(user);
     }
 
@@ -36,8 +38,12 @@ public class Greeter {
 
     public int clearPerUser(String user) {
         return users.remove(user);
+
     }
 
+    public void greetedUsers(){
+        System.out.println(users);
+    }
 //    public String clearUsersValue(String user){
 //        //DELETE THE USER VALUE
 //        int keep = users.get(user); //GETS ALL THE USER'S VALUE
