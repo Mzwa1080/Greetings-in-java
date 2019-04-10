@@ -44,6 +44,9 @@ public class Greeter {
     public void greetedUsers(){
         System.out.println(users);
     }
+    public void out(){
+        System.out.println("Exiting!");
+    }
 //    public String clearUsersValue(String user){
 //        //DELETE THE USER VALUE
 //        int keep = users.get(user); //GETS ALL THE USER'S VALUE

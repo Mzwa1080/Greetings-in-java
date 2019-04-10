@@ -28,8 +28,6 @@ public class GreetTest {
     public void getAllUsers(){
         Greeter user = new Greeter();
         user.addUsers("Mzwa");
-
-//        assertArrayEquals(user.addUsers("Mzwa"), true);
     }
 
 
@@ -52,7 +50,6 @@ public class GreetTest {
         user1.addUsers("Mzwa");
         user1.addUsers("Tzoo");
 
-//        System.out.println(user1.getCountForUser("Mzwa"));
         assertEquals(user1.getCountForUser("Mzwa"),4);
     }
 
