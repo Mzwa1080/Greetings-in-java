@@ -1,4 +1,4 @@
-package greet;
+package net.greet;
 
 import java.util.*;
 
@@ -17,20 +17,19 @@ public class Greet {
     public static void main(String args[]) {
         Scanner userText = new Scanner(System.in);
         Greeter user = new Greeter();
-// --------------------I MUST CREATE A LIST PUTTING WORDS IN IT------------------------------
         System.out.println("Greet _name_ _language_ e.g 'Greet Shawn IsiXhosa'");
 
         while(true){
             String name = userText.nextLine();
             String [] store = name.split(" ");
 
-            if(store[0].equalsIgnoreCase("greet") && store.length == 3){ //3 commands
+            if(store[0].equalsIgnoreCase("net/greet") && store.length == 3){ //3 commands
                 user.addUsers(store[1]);
                 String language = store[2];
                 System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
-            }else if(store[0].equalsIgnoreCase("greet") && store.length == 1){
+            }else if(store[0].equalsIgnoreCase("net/greet") && store.length == 1){
                 System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
-            }else if(store[0].equalsIgnoreCase("greet") && store.length == 2){
+            }else if(store[0].equalsIgnoreCase("net/greet") && store.length == 2){
                 System.out.println("Greet "+ store[1].toUpperCase() + " in Which Language?");
             }else if(store[0].equalsIgnoreCase("greeted") && store.length == 1){
                 user.greetedUsers();
@@ -58,9 +57,5 @@ public class Greet {
         }
 
     }
-//What ever its in the scanner or typed === must be the one added with the language && name should be added to list
-//     Then it should be printed out both of them
-
-
 
 }

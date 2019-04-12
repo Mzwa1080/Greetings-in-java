@@ -1,4 +1,4 @@
-package greet;
+package net.greet;
 
 public enum Languages {
     IsiXhosa("Molo"),

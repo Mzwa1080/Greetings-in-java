@@ -1,5 +1,4 @@
-import greet.Greet;
-import greet.Greeter;
+import net.greet.Greeter;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
