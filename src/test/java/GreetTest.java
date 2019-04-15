@@ -1,4 +1,4 @@
-import net.greet.Greeter;
+import net.greet.Greet;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,14 +25,14 @@ public class GreetTest {
 
     @Test
     public void getAllUsers(){
-        Greeter user = new Greeter();
+        Greet user = new Greet();
         user.addUsers("Mzwa");
     }
 
 
     @Test
     public void addUsersAndCountEveryUser(){
-        Greeter user = new Greeter();
+        Greet user = new Greet();
          user.addUsers("Mzwa");
          user.addUsers("Ben");
          user.addUsers("Steve");
@@ -42,7 +42,7 @@ public class GreetTest {
 
     @Test
     public void howManyTimesSingleUserRepeated(){
-        Greeter user1 = new Greeter();
+        Greet user1 = new Greet();
         user1.addUsers("Mzwa");
         user1.addUsers("Mzwa");
         user1.addUsers("Mzwa");
@@ -55,7 +55,7 @@ public class GreetTest {
 
     @Test
     public void clearAllUsers(){
-        Greeter clearUsers = new Greeter();
+        Greet clearUsers = new Greet();
         clearUsers.addUsers("Shawn");
         clearUsers.addUsers("John");
         clearUsers.addUsers("Sakhi");
@@ -69,7 +69,7 @@ public class GreetTest {
 
     @Test
     public void clearUserEach(){
-        Greeter clearUser = new Greeter();
+        Greet clearUser = new Greet();
         clearUser.addUsers("Mzwa");
         clearUser.addUsers("Shawn");
         clearUser.addUsers("Sakhi");
@@ -82,7 +82,7 @@ public class GreetTest {
 
 //    @Test
 //    public void clearUserValue(){
-//        Greeter clearValue  = new Greeter();
+//        Greet clearValue  = new Greet();
 //        clearValue.addUsers("Mzwa");
 //        clearValue.addUsers("Mzwa");
 //        clearValue.addUsers("Mzwa");

@@ -3,59 +3,78 @@ package net.greet;
 import java.util.*;
 
 public class Greet {
-    private String userName,lang;
-//    private Map<String, Integer> users;
-//    private int count;
+    private Map<String, Integer>users;
 
-    public Greet(String name, String language){
-        userName = name;
-        lang = language;
-//        users = new HashMap<String, Integer>();
+    public Greet(){
+        users = new HashMap<>();
     }
 
-
-    public static void main(String args[]) {
-        Scanner userText = new Scanner(System.in);
-        Greeter user = new Greeter();
-        System.out.println("Greet _name_ _language_ e.g 'Greet Shawn IsiXhosa'");
-
-        while(true){
-            String name = userText.nextLine();
-            String [] store = name.split(" ");
-
-            if(store[0].equalsIgnoreCase("net/greet") && store.length == 3){ //3 commands
-                user.addUsers(store[1]);
-                String language = store[2];
-                System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
-            }else if(store[0].equalsIgnoreCase("net/greet") && store.length == 1){
-                System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
-            }else if(store[0].equalsIgnoreCase("net/greet") && store.length == 2){
-                System.out.println("Greet "+ store[1].toUpperCase() + " in Which Language?");
-            }else if(store[0].equalsIgnoreCase("greeted") && store.length == 1){
-                user.greetedUsers();
-            }else if(store[0].equalsIgnoreCase("counter") && store.length == 1 ){
-                user.getCountForAllUsers();
-            }else if(store[0].equalsIgnoreCase("clear") && store.length == 1){
-                user.clearAllUsers();
-                System.out.println("All users are cleared");
-            }else if(store[0].equalsIgnoreCase("clear") && store.length == 2 ){
-                user.clearPerUser(store[1]);
-                System.out.println(store[1] + " has been removed!");
-            }else if(store[0].equalsIgnoreCase("exit") && store.length ==1 ){
-                user.out();
-                userText.close();
-            }else if(store[0].equalsIgnoreCase("help") && store.length == 1){
-                System.out.println("-*-*-Available Commands-*-*-");
-                System.out.println("Command : 'Greet' _Name_ _Language_ <");
-                System.out.println("Command : 'Greeted' -Returns all names");
-                System.out.println("Command : 'Clear' -Clears everyone");
-                System.out.println("Command : 'Clear _name_ - Clear the _name_");
-                System.out.println("Command : 'Exit' -Exits");
-            }else{
-                System.out.println("Invalid Commands--- Type 'Help'");
-            }
+    public Map<String, Integer> addUsers(String perUser){
+        if(users.containsKey(perUser)){
+            int count = users.get(perUser);
+            users.put(perUser, count + 1);
         }
+        else {
+            users.put(perUser,1);
+        }
+        return users;
+    }
+
+
+    public int getCountForAllUsers(){
+        int count = users.size();
+        System.out.println(count);
+        return count;
+    }
+
+    public int getCountForUser(String user){
+        System.out.println(users.get(user));
+        return users.get(user);
+    }
+
+    public void clearAllUsers() {
+        users.clear();
+    }
+
+    public int clearPerUser(String user) {
+        return users.remove(user);
 
     }
+
+    public void greetedUsers(){
+        System.out.println(users);
+    }
+    public void out(){
+        System.out.println("Exiting!");
+    }
+//    public String clearUsersValue(String user){
+//        //DELETE THE USER VALUE
+//        int keep = users.get(user); //GETS ALL THE USER'S VALUE
+//        System.out.printf("Gets all values : --> "+ keep);
+//
+//
+//        System.out.println("----------------------------------------------------------------");
+//
+//
+//        System.out.println((keep) -- );
+//
+////        System.out.println();
+////        System.out.println();
+////        System.out.println(users.containsValue(keep));
+//        return "I want to decrement the value of the guy";
+//    }
+//    ///I MUST CLEAR THE VALUE BY -1
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
