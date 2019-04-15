@@ -34,9 +34,11 @@ public class GreetJDBC implements GreetInterface {
         try{
             Connection conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
-
+            final String UPDATE_COUNTER = "update users set count = ? where name=?";
 
             PreparedStatement ps = conn.prepareStatement(INSERT_USERNAMES);
+            PreparedStatement ps2 = conn.prepareStatement(UPDATE_COUNTER); //----SET NAME TO INCREMENT BY---1--
+
             ps.setString(1,name.toString());
             ps.setInt(2,1);
             ps.execute();
