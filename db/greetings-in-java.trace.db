@@ -4,3 +4,490 @@ org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
 org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
 2019-04-15 16:44:26 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 10:36:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:40)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 10:36:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:40)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 10:38:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:40)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 10:53:10 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+delete from users [90002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.Prepared.query(Prepared.java:229)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:145)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.clearAllUsers(GreetJDBC.java:91)
+	at net.greet.Greeter.main(Greeter.java:44)
+2019-04-16 11:09:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]
+2019-04-16 11:10:14 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]
+2019-04-16 11:21:55 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:83)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 11:23:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:83)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 11:43:45 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:82)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 11:44:59 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:76)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 11:45:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:76)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 11:45:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]
+2019-04-16 12:01:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:76)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 12:01:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:76)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 12:02:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]
+2019-04-16 12:11:37 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:77)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 12:11:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:77)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 12:13:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:77)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-16 12:54:34 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:41)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 12:55:31 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:41)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 12:56:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:41)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 12:58:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:41)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 12:59:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:41)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 14:44:36 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+select name from users where name = ? [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.execute(JdbcPreparedStatement.java:243)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:51)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 14:53:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "mzii" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3188)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:44)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 14:59:41 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:51)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 15:00:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COUNT" not found; SQL statement:
+update users set count = ? where name=? [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:708)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1214)
+	at org.h2.command.Parser.parseUpdateSetClause(Parser.java:1252)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1223)
+	at org.h2.command.Parser.parsePrepared(Parser.java:943)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:51)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 15:01:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:04:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:56)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 15:08:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:51)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 15:10:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:11:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:14:52 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:15:17 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:15:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:16:10 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:16:30 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "shawn" [22018-199]
+2019-04-16 15:21:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+select name from users where name = ? [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:85)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:43)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 15:30:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:31:43 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-16 15:52:32 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "2" for parameter "parameterIndex" [90008-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1573)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:427)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:54)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 16:01:12 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+insert into users(name,counter) values(?,?) [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:45)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 16:04:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+insert into users(name,counter) values(?,?) [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:45)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 16:08:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+update users set counter = ? where name = ? [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.addUsers(GreetJDBC.java:45)
+	at net.greet.Greeter.main(Greeter.java:32)
+2019-04-16 16:11:04 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]

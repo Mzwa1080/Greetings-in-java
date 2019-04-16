@@ -34,37 +34,44 @@ public class GreetJDBC implements GreetInterface {
         try{
             Connection conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
-            final String UPDATE_COUNTER = "update users set count = ? where name=?";
+            final String UPDATE_COUNTER = "update users set counter = counter + 1 where name = ?";
 
-            PreparedStatement ps = conn.prepareStatement(INSERT_USERNAMES);
-            PreparedStatement ps2 = conn.prepareStatement(UPDATE_COUNTER); //----SET NAME TO INCREMENT BY---1--
 
-            ps.setString(1,name.toString());
-            ps.setInt(2,1);
-            ps.execute();
-            //System.out.println(ps);
+            PreparedStatement ps_Insert = conn.prepareStatement(INSERT_USERNAMES);
+            Statement stmt = conn.createStatement();
+            ResultSet rsCheck = stmt.executeQuery("select * from users");
 
-//            Statement stmt = conn.createStatement();
-            ResultSet rs = conn.createStatement().executeQuery("select * from users");
-            while (rs.next()) {
-                System.out.println(rs.getString("name"));
-            }
+
+                if (!rsCheck.next()){
+                    ps_Insert.setString(1,name);
+                    ps_Insert.setInt(2,1);
+                    ps_Insert.execute();
+
+                }else{
+                    PreparedStatement ps_counter = conn.prepareStatement(UPDATE_COUNTER);
+//                    ps_counter.setInt(1, +1);
+                    ps_counter.setString(1,name);
+                    ps_counter.execute();
+                }
 
 
         } catch(SQLException ex){
-            System.out.println(ex);
+            ex.printStackTrace();
         }
     }
 
     @Override
     public void greetedUsers() {
+        Connection conn =  getConnection();
 
             try {
-                Connection conn =  getConnection();
                 Statement stmnt = conn.createStatement();
-                ResultSet rs = stmnt.executeQuery("select name from users");
-                rs.getString("name");
-                System.out.println(rs);
+                ResultSet rs = stmnt.executeQuery("select * from users");
+                while(rs.next()){
+                    System.out.println("NAME_COUNT : ---> " + rs.getInt("counter"));
+                    System.out.println("NAME : ---------> "+ rs.getString("name"));
+                }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -73,12 +80,36 @@ public class GreetJDBC implements GreetInterface {
 
     @Override
     public void getCountForAllUsers() {
-
+//        conn = getConnection();
+//        try {
+//            Statement stmt = conn.createStatement();
+//            ResultSet rsCountEveryOne = stmt.executeQuery("select count(counter) from users");
+//
+//            while(rsCountEveryOne.next()){
+//                System.out.println(rsCountEveryOne.getInt("counter"));
+//
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
     }
 
     @Override
     public void clearAllUsers() {
+        conn = getConnection();
+        String CLEAR_EVERYONE = "delete from users";
 
+        try {
+            PreparedStatement psClear = conn.prepareStatement(CLEAR_EVERYONE); //psClear ---> uses/holds the query
+            psClear.execute(); //runs it/ clears
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
