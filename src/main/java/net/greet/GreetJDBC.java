@@ -90,11 +90,10 @@ public class GreetJDBC implements GreetInterface {
         conn = getConnection();
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rsCountEveryOne = stmt.executeQuery("select * from users");
+            ResultSet rsCountEveryOne = stmt.executeQuery("select name from users");
 
             while(rsCountEveryOne.next()){
                 System.out.println(rsCountEveryOne.getRow());
-
             }
 
         } catch (SQLException e) {
