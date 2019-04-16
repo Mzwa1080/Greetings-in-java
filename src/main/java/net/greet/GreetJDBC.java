@@ -1,6 +1,8 @@
 package net.greet;
 
 import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GreetJDBC implements GreetInterface {
     Connection conn;
@@ -39,10 +41,13 @@ public class GreetJDBC implements GreetInterface {
 
             PreparedStatement ps_Insert = conn.prepareStatement(INSERT_USERNAMES);
             Statement stmt = conn.createStatement();
-            ResultSet rsCheck = stmt.executeQuery("select * from users");
+            PreparedStatement rsCheck = conn.prepareStatement("select * from users where name = ?");
+            rsCheck.setString(1,name);
+
+            ResultSet rs = rsCheck.executeQuery();
 
 
-                if (!rsCheck.next()){
+                if (!rs.next()){
                     ps_Insert.setString(1,name);
                     ps_Insert.setInt(2,1);
                     ps_Insert.execute();
@@ -54,45 +59,47 @@ public class GreetJDBC implements GreetInterface {
                     ps_counter.execute();
                 }
 
-
         } catch(SQLException ex){
             ex.printStackTrace();
         }
     }
 
     @Override
-    public void greetedUsers() {
+    public Map<String, Integer> greetedUsers() {
         Connection conn =  getConnection();
+        Map<String, Integer> greetedUser = new HashMap<>();
 
             try {
                 Statement stmnt = conn.createStatement();
                 ResultSet rs = stmnt.executeQuery("select * from users");
                 while(rs.next()){
-                    System.out.println("NAME_COUNT : ---> " + rs.getInt("counter"));
-                    System.out.println("NAME : ---------> "+ rs.getString("name"));
+                    greetedUser.put(rs.getString("name"), rs.getInt("counter"));
+                    System.out.println(greetedUser);
+//                    return greetedUser;
                 }
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
+        return greetedUser;
     }
 
     @Override
     public void getCountForAllUsers() {
-//        conn = getConnection();
-//        try {
-//            Statement stmt = conn.createStatement();
-//            ResultSet rsCountEveryOne = stmt.executeQuery("select count(counter) from users");
-//
-//            while(rsCountEveryOne.next()){
-//                System.out.println(rsCountEveryOne.getInt("counter"));
-//
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        conn = getConnection();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rsCountEveryOne = stmt.executeQuery("select * from users");
+
+            while(rsCountEveryOne.next()){
+                System.out.println(rsCountEveryOne.getRow());
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 //
     }
 
