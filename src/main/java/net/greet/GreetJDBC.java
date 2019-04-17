@@ -35,7 +35,7 @@ public class GreetJDBC implements GreetInterface {
     @Override
     public void addUsers(String name) {
         try{
-            Connection conn = getConnection();
+            conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
             final String UPDATE_COUNTER = "update users set counter = counter + 1 where name = ?";
 
@@ -67,16 +67,13 @@ public class GreetJDBC implements GreetInterface {
 
     @Override
     public Map<String, Integer> greetedUsers() {
-        Connection conn =  getConnection();
+         conn =  getConnection();
 
             try {
                 Statement stmnt = conn.createStatement();
                 ResultSet rs = stmnt.executeQuery("select * from users");
-//                ResultSet rs = stmnt.executeQuery("select * from users order by name,counter desc limit 1");
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
-                    greetedUser.put(rs.getString("name"), rs.getInt("counter"));
-
                     System.out.println(greetedUser);
 //                    return greetedUser;
                 }
@@ -96,12 +93,9 @@ public class GreetJDBC implements GreetInterface {
             ResultSet rsCountEveryOne = stmt.executeQuery("select count(*) from users");
 
             while(rsCountEveryOne.next()){
-                System.out.println("MAP --------> "+greetedUser.size());
-                System.out.println("DATABASE ---> "+rsCountEveryOne);
+                System.out.println(greetedUser.size());
+
             }
-
-
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -140,28 +134,15 @@ public class GreetJDBC implements GreetInterface {
             ResultSet rs = check_user.executeQuery();
 
             while (rs.next()){
-                System.out.println("DATABASE ----> "+ rs.getString("name"));
-                System.out.println("MAP ---------> "+ greetedUser.remove(user));            }
+                System.out.println(rs.getString("name"));
+                System.out.println(greetedUser.remove(user));
+
+            }
 
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-//        PreparedStatement psRemove = null;
-//        try {
-//            psRemove = conn.prepareStatement(remove_one);
-//            psRemove.setString(1,user);
-//            psRemove.execute();
-//
-//            Statement stmt = conn.createStatement();
-//            ResultSet rs = stmt.executeQuery("select name from users");
-//
-//            System.out.println(greetedUser.remove(user));
-//            System.out.println(rs.getRow());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
 
 
     }

@@ -613,3 +613,5 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
 	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
 	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:100)
 	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-17 15:48:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
