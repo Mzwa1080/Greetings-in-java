@@ -491,3 +491,125 @@ update users set counter = ? where name = ? [90012-199]
 	at net.greet.Greeter.main(Greeter.java:32)
 2019-04-16 16:11:04 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "mzwa" [22018-199]
+2019-04-17 10:46:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "rowId" [50100-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:269)
+	at org.h2.message.TraceObject.unsupported(TraceObject.java:398)
+	at org.h2.jdbc.JdbcResultSet.getRowId(JdbcResultSet.java:3344)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:96)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-17 10:55:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY NAME ASC WHERE[*] ROWNUM > 1 "; SQL statement:
+select name from users order by name asc where rownum > 1 [42000-199]
+2019-04-17 10:56:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY NAME DESC  WHERE[*] LIMIT 1 "; SQL statement:
+select name from users order by name desc  where limit 1 [42000-199]
+2019-04-17 10:57:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY NAME DESC WHERE[*] LIMIT=1 "; SQL statement:
+select name from users order by name desc where limit=1 [42000-199]
+2019-04-17 10:57:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY NAME DESC LIMIT=[*]1 "; expected "NOT, EXISTS, INTERSECTS"; SQL statement:
+select name from users order by name desc limit=1 [42001-199]
+2019-04-17 10:58:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY ID DESC LIMIT=[*]1 "; expected "NOT, EXISTS, INTERSECTS"; SQL statement:
+select name from users order by id desc limit=1 [42001-199]
+2019-04-17 10:58:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT NAME FROM USERS ORDER BY ID ASC LIMIT >[*] 1 "; expected "NOT, EXISTS, INTERSECTS"; SQL statement:
+select name from users order by id asc limit > 1 [42001-199]
+2019-04-17 10:59:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "ROWID" not found; SQL statement:
+select name from users order by rowid  desc  limit 1 [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.command.dml.Select.prepare(Select.java:1245)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:93)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-17 11:01:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "rowId" [50100-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:269)
+	at org.h2.message.TraceObject.unsupported(TraceObject.java:398)
+	at org.h2.jdbc.JdbcResultSet.getRowId(JdbcResultSet.java:3344)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:96)
+	at net.greet.Greeter.main(Greeter.java:42)
+2019-04-17 11:20:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.greetedUsers(GreetJDBC.java:77)
+	at net.greet.Greeter.main(Greeter.java:40)
+2019-04-17 11:23:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-17 12:57:20 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+select name from users where name = ? [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.clearPerUser(GreetJDBC.java:135)
+	at net.greet.Greeter.main(Greeter.java:47)
+2019-04-17 12:59:03 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLDataException: Parameter "#1" is not set; SQL statement:
+select name from users where name = ? [90012-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:587)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:94)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:180)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:144)
+	at org.h2.command.Command.executeQuery(Command.java:202)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:115)
+	at net.greet.GreetJDBC.clearPerUser(GreetJDBC.java:135)
+	at net.greet.Greeter.main(Greeter.java:47)
+2019-04-17 13:06:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-199]
+2019-04-17 15:30:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "counter" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:350)
+	at net.greet.GreetJDBC.greetedUsers(GreetJDBC.java:77)
+	at net.greet.Greeter.main(Greeter.java:40)
+2019-04-17 15:40:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "name" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3214)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at net.greet.GreetJDBC.getCountForAllUsers(GreetJDBC.java:100)
+	at net.greet.Greeter.main(Greeter.java:42)

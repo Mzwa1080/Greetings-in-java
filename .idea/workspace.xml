@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36bf9087-c8ba-4a18-8959-414e91f970b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/greetings-in-java.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/greetings-in-java.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/greetings-in-java.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/greetings-in-java.trace.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/greet/GreetInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/greet/GreetInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/greet/GreetJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/greet/GreetJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/greet/Greeter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/greet/Greeter.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +37,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="33" selection-start-line="33" selection-end-line="33" />
+                <state relative-caret-position="453">
+                  <caret line="45" column="59" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="59" />
                 </state>
               </provider>
             </entry>
@@ -40,8 +46,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="254">
-                  <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+                <state relative-caret-position="360">
+                  <caret line="99" column="74" selection-start-line="99" selection-start-column="74" selection-end-line="99" selection-end-column="74" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -52,8 +58,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__add_users.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -71,16 +77,16 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/GreetInterface.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="25" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__create_usersdb.sql">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
@@ -124,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V1__create_usersdb.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/Greeter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/greet/GreetInterface.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__add_users.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/net/greet/GreetInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java" />
       </list>
     </option>
@@ -151,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,11 +203,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555427094242" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555508450932" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../starting-with-jdbc-koans" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -347,7 +353,7 @@
     <frame x="-3" y="25" width="1926" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16453674" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16613418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -359,13 +365,13 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893504" visible="true" weight="0.284492" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840257" visible="true" weight="0.3721925" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.39806867" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946752" weight="0.42566845" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50106496" side_tool="true" weight="0.3197425" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50159746" side_tool="true" weight="0.3080214" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32834226" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -473,17 +479,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__add_users.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/GreetInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -494,17 +493,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/GreetInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__add_users.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="45">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="45" column="59" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="98" column="34" lean-forward="true" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+        <state relative-caret-position="360">
+          <caret line="99" column="74" selection-start-line="99" selection-start-column="74" selection-end-line="99" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
