@@ -12,22 +12,21 @@ public class GreetJDBC implements GreetInterface {
     final Map<String, Integer> greetedUser = new HashMap<>();
 
 
-    public void registerConnection(){
+    public Connection getConnection() {
+        Connection connect = null;
+
         try {
-            Class.forName("org.h2.Driver"); //registers a connection of db with driver
+            Class.forName("org.h2.Driver");
+            try {
+                connect = DriverManager.getConnection(jdbcURL, username, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-    }
 
-    public Connection getConnection() {
-        Connection connect = null;
-        try {
-            connect = DriverManager.getConnection(jdbcURL, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return connect;
 
     }
@@ -132,12 +131,10 @@ public class GreetJDBC implements GreetInterface {
 
             PreparedStatement check_user = conn.prepareStatement(select_user);
             ResultSet rs = check_user.executeQuery();
-
-            while (rs.next()){
-                System.out.println(rs.getString("name"));
-                System.out.println(greetedUser.remove(user));
-
-            }
+//
+//            while (rs.next()){
+//                System.out.println(greetedUser.remove(user));
+//            }
 
 
         } catch (SQLException e) {

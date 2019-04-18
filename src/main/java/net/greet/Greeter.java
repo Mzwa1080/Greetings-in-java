@@ -18,16 +18,16 @@ public class Greeter {
 
         try {
             Scanner userText = new Scanner(System.in);
-            GreetJDBC user = new GreetJDBC();
+            GreetInterface user = new GreetJDBC();
 
 
 
             System.out.println("Greet _name_ _language_ e.g 'Greet Shawn IsiXhosa'");
+            System.out.println("Enter a command: " );
 
             while (true) {
                 String name = userText.nextLine();
                 String[] store = name.split(" ");
-
                 if (store[0].equalsIgnoreCase("greet") && store.length == 3) { //3 commands
                     user.addUsers(store[1]);
                     String language = store[2];
@@ -43,7 +43,7 @@ public class Greeter {
                 } else if (store[0].equalsIgnoreCase("clear") && store.length == 1) {
                     user.clearAllUsers();
                     System.out.println("All users are cleared");
-                } else if (store[0].equalsIgnoreCase("clear") && store.length == 2) {
+                } else if (store[0].equalsIgnoreCase("remove") && store.length == 2) {
                     user.clearPerUser(store[1]);
                     System.out.println(store[1] + " has been removed!");
                 } else if (store[0].equalsIgnoreCase("exit") && store.length == 1) {
