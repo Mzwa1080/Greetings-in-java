@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class JDBCTest {
 
-    final String GREETINGS_JDBC ="jdbc:h2:file:./target/testDB/greetings-in-java";
+    final String GREETINGS_JDBC ="jdbc:h2:file:./target/greetings-in-java";
     final String username = "";
     final String password = "";
     Connection conn;
@@ -63,7 +63,7 @@ public class JDBCTest {
 
     @Test
     public void addUsers(){
-        GreetJDBC insert = new GreetJDBC("jdbc:h2:file:./target/testDB/greetings-in-java");
+        GreetJDBC insert = new GreetJDBC();
 //        insert.clearAllUsers();
         insert.addUsers("Mzwakhe");
         insert.addUsers("Shawn");
@@ -76,7 +76,7 @@ public class JDBCTest {
 
     @AfterEach
     public void clearTable2(){
-        GreetJDBC clean =  new GreetJDBC("jdbc:h2:file:./target/testDB/greetings-in-java");
+        GreetJDBC clean =  new GreetJDBC();
         clean.clearAllUsers();
     }
 }

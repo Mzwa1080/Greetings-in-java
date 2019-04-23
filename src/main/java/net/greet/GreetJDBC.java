@@ -6,23 +6,23 @@ import java.util.Map;
 
 public class GreetJDBC implements GreetInterface {
     Connection conn;
-    String jdbcURL;
+    String jdbcURL = "jdbc:h2:file:./target/greetings-in-java";
     final String username = "";
     final String password = "";
     final Map<String, Integer> greetedUser = new HashMap<>();
 
 
-    public GreetJDBC(String jdbcURL) {
-        this.jdbcURL = jdbcURL;
-    }
+//    public GreetJDBC(String jdbcURL) {
+//        this.jdbcURL = jdbcURL;
+//    }
 
     public Connection getConnection() {
-        Connection connect = null;
+        conn = null;
 
         try {
             Class.forName("org.h2.Driver");
             try {
-                connect = DriverManager.getConnection(jdbcURL, username, password);
+                conn = DriverManager.getConnection(jdbcURL, username, password);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -31,7 +31,7 @@ public class GreetJDBC implements GreetInterface {
         }
 
 
-        return connect;
+        return conn;
 
     }
 

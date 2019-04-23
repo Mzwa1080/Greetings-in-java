@@ -18,7 +18,7 @@ public class Greeter {
 
         try {
             Scanner userText = new Scanner(System.in);
-            GreetInterface user = new GreetJDBC("jdbc:h2:file:./target/greetings-in-java");
+            GreetInterface user = new GreetJDBC();
 //            Greet user = new Greet();
 
 
@@ -40,7 +40,7 @@ public class Greeter {
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 1) {
                         System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 2) {
-                        System.out.println("Greet " + store[1].toUpperCase() + " in Which Language?");
+                        System.out.println("Greet " + store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " in Which Language?");
                     } else if (store[0].equalsIgnoreCase("greeted") && store.length == 1) {
                         user.greetedUsers();
                     }
