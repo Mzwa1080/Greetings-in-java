@@ -6,11 +6,15 @@ import java.util.Map;
 
 public class GreetJDBC implements GreetInterface {
     Connection conn;
-    final String jdbcURL = "jdbc:h2:file:./db/greetings-in-java";
+    String jdbcURL = "jdbc:h2:file:./target/greetings-in-java";
     final String username = "";
     final String password = "";
     final Map<String, Integer> greetedUser = new HashMap<>();
 
+
+//    public GreetJDBC(String jdbcURL) {
+//        this.jdbcURL = jdbcURL;
+//    }
 
     public Connection getConnection() {
         Connection connect = null;
@@ -74,7 +78,6 @@ public class GreetJDBC implements GreetInterface {
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
                     System.out.println(greetedUser);
-//                    return greetedUser;
                 }
 
             } catch (SQLException e) {
@@ -144,6 +147,27 @@ public class GreetJDBC implements GreetInterface {
 
     }
 
+    @Override
+    public void getCountForUser(String user) {
+        conn = getConnection();
+        String count_per_user = "select count(*) from users where name = ?";
+        String get_user = "select * from users";
+
+        try {
+            PreparedStatement count = conn.prepareStatement(count_per_user);
+            count.setString(1,user);
+            count.execute();
+
+            PreparedStatement check = conn.prepareStatement(get_user);
+            ResultSet rs = check.executeQuery();
+//            while (rs.next()){
+                System.out.println(greetedUser.get(user));
+//            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     @Override

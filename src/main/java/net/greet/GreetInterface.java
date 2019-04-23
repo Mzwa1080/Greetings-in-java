@@ -8,6 +8,7 @@ public interface GreetInterface {
      void getCountForAllUsers();
      void clearAllUsers();
      void clearPerUser(String user);
+     void getCountForUser(String user);
      Map<String, Integer> greetedUsers();
      void out();
 }

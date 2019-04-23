@@ -28,7 +28,7 @@ public class Greet {
     }
 
     public int getCountForUser(String user){
-        System.out.println(users.get(user));
+        System.out.println(user + " has been greeted " +users.get(user)+"time(s)");
         return users.get(user);
     }
 
@@ -47,24 +47,6 @@ public class Greet {
     public void out(){
         System.out.println("Exiting!");
     }
-//    public String clearUsersValue(String user){
-//        //DELETE THE USER VALUE
-//        int keep = users.get(user); //GETS ALL THE USER'S VALUE
-//        System.out.printf("Gets all values : --> "+ keep);
-//
-//
-//        System.out.println("----------------------------------------------------------------");
-//
-//
-//        System.out.println((keep) -- );
-//
-////        System.out.println();
-////        System.out.println();
-////        System.out.println(users.containsValue(keep));
-//        return "I want to decrement the value of the guy";
-//    }
-//    ///I MUST CLEAR THE VALUE BY -1
-
 
 
 }

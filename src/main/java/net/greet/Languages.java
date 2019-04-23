@@ -1,30 +1,28 @@
 package net.greet;
 
-import com.sun.xml.internal.txw2.IllegalAnnotationException;
 
 public enum Languages {
-    IsiXhosa("Molo"),
+    Afrikaans("Goeie dag"),
     English("Hello"),
-    Afrikaans("Goeie dag");
+    IsiXhosa("Molo");
 
     private String langs;
 
-    Languages(String langs){
-        try{
+    Languages(String langs) {
+        try {
             this.langs = langs;
-        }catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             ex.printStackTrace();
         }
 
     }
 
-    public String getNames(String user){
-        try{
+    public String getNames(String user) {
+        try {
             return langs + user;
-        }catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             ex.printStackTrace();
-        }
-        finally {
+        } finally {
             return langs + user;
         }
     }

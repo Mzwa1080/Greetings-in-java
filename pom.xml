@@ -36,9 +36,18 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>jdbc:h2:file:./db/greetings-in-java</url>
+                    <url>jdbc:h2:file:./target/greetings-in-java</url>
                 </configuration>
             </plugin>
+            <!--************** FLYWAY CONFIG *************-->
+            <!--<plugin>-->
+                <!--<groupId>org.flywaydb</groupId>-->
+                <!--<artifactId>flyway-maven-plugin</artifactId>-->
+                <!--<version>5.2.4</version>-->
+                <!--<configuration>-->
+                    <!--<url>jdbc:h2:file:./dbTest/greetings-in-java</url>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
