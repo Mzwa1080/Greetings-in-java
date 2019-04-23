@@ -18,7 +18,7 @@ public class Greeter {
 
         try {
             Scanner userText = new Scanner(System.in);
-            GreetInterface user = new GreetJDBC();
+            GreetInterface user = new GreetJDBC("jdbc:h2:file:./target/greetings-in-java");
 //            Greet user = new Greet();
 
 
@@ -45,7 +45,7 @@ public class Greeter {
                         user.greetedUsers();
                     }
                     else if(store[0].equalsIgnoreCase("greeted") && store.length == 2){
-                        user.getCountForUser(store[1]);
+                        user.getCountForUser( store[1] ); //I CAN'T IGNORECASE FOR NAME ENTERED
                     }
                     else if (store[0].equalsIgnoreCase("counter") && store.length == 1) {
                         user.getCountForAllUsers();

@@ -18,12 +18,7 @@ public enum Languages {
     }
 
     public String getNames(String user) {
-        try {
-            return langs + user;
-        } catch (IllegalArgumentException ex) {
-            ex.printStackTrace();
-        } finally {
-            return langs + user;
-        }
+            return langs + user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
+
     }
 }

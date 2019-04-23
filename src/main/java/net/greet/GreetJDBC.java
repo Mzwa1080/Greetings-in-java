@@ -6,15 +6,15 @@ import java.util.Map;
 
 public class GreetJDBC implements GreetInterface {
     Connection conn;
-    String jdbcURL = "jdbc:h2:file:./target/greetings-in-java";
+    String jdbcURL;
     final String username = "";
     final String password = "";
     final Map<String, Integer> greetedUser = new HashMap<>();
 
 
-//    public GreetJDBC(String jdbcURL) {
-//        this.jdbcURL = jdbcURL;
-//    }
+    public GreetJDBC(String jdbcURL) {
+        this.jdbcURL = jdbcURL;
+    }
 
     public Connection getConnection() {
         Connection connect = null;
@@ -46,20 +46,20 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement ps_Insert = conn.prepareStatement(INSERT_USERNAMES);
 //            Statement stmt = conn.createStatement();
             PreparedStatement rsCheck = conn.prepareStatement("select * from users where name = ?");
-            rsCheck.setString(1,name);
+            rsCheck.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
             rsCheck.execute();
 
             ResultSet rs = rsCheck.executeQuery();
 
                 if (!rs.next()){
-                    ps_Insert.setString(1,name);
+                    ps_Insert.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
                     ps_Insert.setInt(2,1);
                     ps_Insert.execute();
 
                 }else{
                     PreparedStatement ps_counter = conn.prepareStatement(UPDATE_COUNTER);
 //                    ps_counter.setInt(1, +1);
-                    ps_counter.setString(1,name);
+                    ps_counter.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
                     ps_counter.execute();
                 }
 
@@ -155,13 +155,13 @@ public class GreetJDBC implements GreetInterface {
 
         try {
             PreparedStatement count = conn.prepareStatement(count_per_user);
-            count.setString(1,user);
+            count.setString(1,user.substring(0,1).toUpperCase().charAt(0) + user.substring(1));
             count.execute();
 
             PreparedStatement check = conn.prepareStatement(get_user);
             ResultSet rs = check.executeQuery();
 //            while (rs.next()){
-                System.out.println(greetedUser.get(user));
+                System.out.println(user.substring(0,1).toUpperCase().charAt(0) + user.substring(1) + " has been greeted "+ greetedUser.get(user) + " time(s)");
 //            }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class JDBCTest {
 
-    final String GREETINGS_JDBC ="jdbc:h2:file:./target/greetings-in-java";
+    final String GREETINGS_JDBC ="jdbc:h2:file:./target/testDB/greetings-in-java";
     final String username = "";
     final String password = "";
     Connection conn;
@@ -63,20 +63,20 @@ public class JDBCTest {
 
     @Test
     public void addUsers(){
-        GreetJDBC insert = new GreetJDBC();
+        GreetJDBC insert = new GreetJDBC("jdbc:h2:file:./target/testDB/greetings-in-java");
 //        insert.clearAllUsers();
         insert.addUsers("Mzwakhe");
         insert.addUsers("Shawn");
         insert.getCountForUser("Shawn");
 
-        System.out.println("Where is this null coming from : "+insert.greetedUsers());
+        System.out.println("Where is this null coming from : "+ insert.greetedUsers());
 
         assertEquals(1,1);
     }
 
     @AfterEach
     public void clearTable2(){
-        GreetJDBC clean =  new GreetJDBC();
+        GreetJDBC clean =  new GreetJDBC("jdbc:h2:file:./target/testDB/greetings-in-java");
         clean.clearAllUsers();
     }
 }
