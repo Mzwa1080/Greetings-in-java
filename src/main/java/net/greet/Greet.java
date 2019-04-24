@@ -10,6 +10,7 @@ public class Greet {
     }
 
     public Map<String, Integer> addUsers(String perUser){
+        perUser = perUser.toUpperCase().substring(0,1).charAt(0) + perUser.substring(1);
         if(users.containsKey(perUser)){
             int count = users.get(perUser);
             users.put(perUser, count + 1);
@@ -28,6 +29,7 @@ public class Greet {
     }
 
     public int getCountForUser(String user){
+        user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
         System.out.println(user + " has been greeted " +users.get(user)+"time(s)");
         return users.get(user);
     }
@@ -37,6 +39,7 @@ public class Greet {
     }
 
     public int clearPerUser(String user) {
+        user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
         return users.remove(user);
 
     }
