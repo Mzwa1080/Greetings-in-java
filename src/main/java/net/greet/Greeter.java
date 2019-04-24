@@ -28,26 +28,21 @@ public class Greeter {
             while (true) {
                 String name = userText.nextLine();
                 String[] store = name.split(" ");
-                try{
+//                try{
                     if (store[0].equalsIgnoreCase("greet") && store.length == 3) { //3 commands
                         user.addUsers(store[1]);
-                        String language = store[2];
-                        try{
-                            System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
-                        }catch(IllegalArgumentException ex){
-                            ex.printStackTrace();
-                        }
+                        String language = store[2].substring(0,1).toUpperCase().charAt(0) + store[2].substring(1);
+
+                        System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 1) {
                         System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 2) {
                         System.out.println("Greet " + store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " in Which Language?");
                     } else if (store[0].equalsIgnoreCase("greeted") && store.length == 1) {
                         user.greetedUsers();
-                    }
-                    else if(store[0].equalsIgnoreCase("greeted") && store.length == 2){
+                    } else if(store[0].equalsIgnoreCase("greeted") && store.length == 2){
                         user.getCountForUser( store[1] ); //I CAN'T IGNORECASE FOR NAME ENTERED
-                    }
-                    else if (store[0].equalsIgnoreCase("counter") && store.length == 1) {
+                    } else if (store[0].equalsIgnoreCase("counter") && store.length == 1) {
                         user.getCountForAllUsers();
                     } else if (store[0].equalsIgnoreCase("clear") && store.length == 1) {
                         user.clearAllUsers();
@@ -65,23 +60,18 @@ public class Greeter {
                         System.out.println("Command : 'Clear' -Clears everyone");
                         System.out.println("Command : 'Clear _name_ - Clear the _name_");
                         System.out.println("Command : 'Exit' -Exits");
-                    } else if(userText == null){
-                        try{
-                            userText.close();
-
-                        }catch (IllegalArgumentException ex){
-                            ex.printStackTrace();
-                        }
                     }
+
 
                     else {
-                        System.out.println("Invalid Command(s)--- Type 'Help' for info");
+                        if(store[0].isEmpty()){
+//                            System.out.println();
+                        }
+                        else if(store.length > 0){
+                            System.out.println("Invalid command type 'help' for available commands!");
+
+                        }
                     }
-                }catch(IllegalArgumentException e){
-                        e.printStackTrace();
-                }
-
-
             }
 
         } catch (IllegalStateException e){
