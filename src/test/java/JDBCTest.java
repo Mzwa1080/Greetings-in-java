@@ -45,6 +45,7 @@ public class JDBCTest {
     @BeforeEach
     public void clearTable(){
         conn = getConnection();
+        System.out.println("I'm not working");
         try {
             Statement statement = null;
             try {
@@ -64,10 +65,10 @@ public class JDBCTest {
     @Test
     public void addUsers(){
         GreetJDBC insert = new GreetJDBC();
-//        insert.clearAllUsers();
+        insert.clearAllUsers();
+
         insert.addUsers("Mzwakhe");
         insert.addUsers("Shawn");
-        insert.getCountForUser("Shawn");
 
         System.out.println("Where is this null coming from : "+ insert.greetedUsers());
 

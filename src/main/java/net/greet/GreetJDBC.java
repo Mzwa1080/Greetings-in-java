@@ -29,8 +29,6 @@ public class GreetJDBC implements GreetInterface {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
         return conn;
 
     }
@@ -77,8 +75,8 @@ public class GreetJDBC implements GreetInterface {
                 ResultSet rs = stmnt.executeQuery("select * from users");
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
-                    System.out.println(greetedUser);
                 }
+                System.out.println(greetedUser);
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -135,10 +133,10 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement check_user = conn.prepareStatement(select_user);
             ResultSet rs = check_user.executeQuery();
 //
-//            while (rs.next()){
-//                System.out.println(greetedUser.remove(user));
-//            }
-
+            while (rs.next()){
+                System.out.println(greetedUser.remove(user));
+            }
+            greetedUser.remove(user);
 
         } catch (SQLException e) {
             e.printStackTrace();
