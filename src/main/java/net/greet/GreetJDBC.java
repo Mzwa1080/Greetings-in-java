@@ -35,6 +35,7 @@ public class GreetJDBC implements GreetInterface {
 
     @Override
     public void addUsers(String name) {
+        name = name.substring(0,1).toUpperCase().charAt(0) + name.substring(1);
         try{
             conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
@@ -44,20 +45,20 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement ps_Insert = conn.prepareStatement(INSERT_USERNAMES);
 //            Statement stmt = conn.createStatement();
             PreparedStatement rsCheck = conn.prepareStatement("select * from users where name = ?");
-            rsCheck.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
+            rsCheck.setString(1,name);
             rsCheck.execute();
 
             ResultSet rs = rsCheck.executeQuery();
 
                 if (!rs.next()){
-                    ps_Insert.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
+                    ps_Insert.setString(1,name);
                     ps_Insert.setInt(2,1);
                     ps_Insert.execute();
 
                 }else{
                     PreparedStatement ps_counter = conn.prepareStatement(UPDATE_COUNTER);
 //                    ps_counter.setInt(1, +1);
-                    ps_counter.setString(1,name.substring(0,1).toUpperCase().charAt(0) + name.substring(1));
+                    ps_counter.setString(1,name);
                     ps_counter.execute();
                 }
 
@@ -86,21 +87,21 @@ public class GreetJDBC implements GreetInterface {
     }
 
     @Override
-    public void getCountForAllUsers() {
+    public int getCountForAllUsers() {
         conn = getConnection();
         try {
             Statement stmt = conn.createStatement();
             ResultSet rsCountEveryOne = stmt.executeQuery("select count(*) from users");
 
-            while(rsCountEveryOne.next()){
+//            while(rsCountEveryOne.next()){
                 System.out.println(greetedUser.size());
 
-            }
+//            }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return greetedUser.size();
     }
 
     @Override
@@ -116,10 +117,12 @@ public class GreetJDBC implements GreetInterface {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+            greetedUser.clear();
     }
 
     @Override
-    public void clearPerUser(String user) {
+    public Map<String, Integer> clearPerUser(String user) {
+        user = user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
         conn = getConnection();
         String remove_one = "delete from users where name = ? ";
 
@@ -132,45 +135,43 @@ public class GreetJDBC implements GreetInterface {
 
             PreparedStatement check_user = conn.prepareStatement(select_user);
             ResultSet rs = check_user.executeQuery();
-//
-            while (rs.next()){
-                System.out.println(greetedUser.remove(user));
-            }
+
+            System.out.println(greetedUser.remove(user));
             greetedUser.remove(user);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
+         return greetedUser;
     }
 
     @Override
-    public void getCountForUser(String user) {
+    public String getCountForUser(String user) {
+        user = user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
         conn = getConnection();
         String count_per_user = "select count(*) from users where name = ?";
         String get_user = "select * from users";
 
         try {
             PreparedStatement count = conn.prepareStatement(count_per_user);
-            count.setString(1,user.substring(0,1).toUpperCase().charAt(0) + user.substring(1));
+            count.setString(1,user);
             count.execute();
 
             PreparedStatement check = conn.prepareStatement(get_user);
             ResultSet rs = check.executeQuery();
-//            while (rs.next()){
-                System.out.println(user.substring(0,1).toUpperCase().charAt(0) + user.substring(1) + " has been greeted "+ greetedUser.get(user) + " time(s)");
-//            }
+
+                System.out.println(user + " has been greeted "+ greetedUser.get(user) + " time(s)");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return user + " has been greeted "+ greetedUser.get(user) + " time(s)" ;
     }
 
 
     @Override
     public void out() {
-
+        System.out.println("Exiting!!!");
     }
 
 }
