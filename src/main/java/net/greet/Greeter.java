@@ -52,11 +52,14 @@ public class Greeter {
                     } else if (store[0].equalsIgnoreCase("clear") && store.length == 1) {
                         user.clearAllUsers();
                         System.out.println("All users are cleared");
-                    } else if (store[0].equalsIgnoreCase("remove") && store.length == 2) {
-                        user.clearPerUser(store[1]);
-                        System.out.println(store[1] + " has been removed!");
+                    } else if (store[0].equalsIgnoreCase("clear") && store.length == 2) {
+                        if(store[1].contentEquals(store[1])){
+                            user.clearPerUser(store[1]);
+                            System.out.println(store[1].toUpperCase().substring(0,1).charAt(0) + store[0].substring(1) + " has been removed!");
+                        }else
+                            System.out.println(store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " not removed!");;
                     } else if (store[0].equalsIgnoreCase("exit") && store.length == 1) {
-                        System.out.println("signing out!!!");
+                        System.out.println("Signing out!!!");
                         userText.close();
                     } else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
                         System.out.println("-*-*-Available Commands-*-*-");
