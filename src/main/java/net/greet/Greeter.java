@@ -33,7 +33,12 @@ public class Greeter {
                         user.addUsers(store[1]);
                         String language = store[2].substring(0,1).toUpperCase().charAt(0) + store[2].substring(1);
 
-                        System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
+                        if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
+                            System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
+                        }
+                        else{
+                            System.out.println("Please select a valid language");
+                        }
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 1) {
                         System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
                     } else if (store[0].equalsIgnoreCase("greet") && store.length == 2) {
@@ -51,7 +56,7 @@ public class Greeter {
                         user.clearPerUser(store[1]);
                         System.out.println(store[1] + " has been removed!");
                     } else if (store[0].equalsIgnoreCase("exit") && store.length == 1) {
-//                        user.out();
+                        System.out.println("signing out!!!");
                         userText.close();
                     } else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
                         System.out.println("-*-*-Available Commands-*-*-");
@@ -69,7 +74,6 @@ public class Greeter {
                         }
                         else if(store.length > 0){
                             System.out.println("Invalid command type 'help' for available commands!");
-
                         }
                     }
             }
