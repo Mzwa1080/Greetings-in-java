@@ -65,12 +65,12 @@ public class Greeter {
                                 userText.close();
                     } else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
                         System.out.println("-*-*-Available Commands-*-*-");
-                        System.out.println("Command : 'Greet' Mzwa _English_ ");
-                        System.out.println("Command : 'Greeted' - Returns all names");
-                        System.out.println("Command : 'Greeted Mzwa' - Returns how many times Mzwa greeted");
-                        System.out.println("Command : 'Clear' -Clears everyone");
-                        System.out.println("Command : 'Clear Mzwa' - Clears' Mzwa");
-                        System.out.println("Command : 'Exit' - Exits and Stops the program");
+                        System.out.println("Command : [Greet Mzwa + English] ");
+                        System.out.println("Command : [Greeted] - Returns all names");
+                        System.out.println("Command : [Greeted Mzwa] - Returns how many times Mzwa greeted");
+                        System.out.println("Command : [Clear] -Clears everyone");
+                        System.out.println("Command : [Clear Mzwa] - Clears' Mzwa");
+                        System.out.println("Command : [Exit] - Exits and Stops the program");
                     }
 
 
@@ -81,9 +81,7 @@ public class Greeter {
                         else if(store.length > 0){
                             System.out.println("Invalid command type 'help' for available commands!");
                         }
-                        else if(store[0].equalsIgnoreCase("greet")){
-                            System.out.println("WTF!!!");
-                        }
+
                     }
             }
 
