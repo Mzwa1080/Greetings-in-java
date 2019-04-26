@@ -23,6 +23,12 @@ public enum Languages {
 
     }
 
+    public String defaultMethod(String name){
+
+
+        return "Molo " + name;
+    }
+
 
 
 }

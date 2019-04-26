@@ -134,7 +134,7 @@ public class GreetJDBC implements GreetInterface {
             remove_user.execute();
 
             PreparedStatement check_user = conn.prepareStatement(select_user);
-            ResultSet rs = check_user.executeQuery();
+            ResultSet rs = check_user.executeQuery(); // 1 => 0
 
             System.out.println(greetedUser.remove(user));
             greetedUser.remove(user);

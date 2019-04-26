@@ -27,7 +27,7 @@ public class Greeter {
 
             while (true) {
                 String name = userText.nextLine();
-                String[] store = name.split(" ");
+                String[] store = name.trim().split(" ");
 //                try{
                     if (store[0].equalsIgnoreCase("greet") && store.length == 3) { //3 commands
                         user.addUsers(store[1]);
@@ -37,17 +37,19 @@ public class Greeter {
                             System.out.println(Languages.valueOf(language).getNames(" " + store[1]));
                         }
                         else{
-                            System.out.println("Please select a valid language");
+                            System.out.println("Please use a valid language.... English,IsiXhosa & Afrikaans");
                         }
-                    } else if (store[0].equalsIgnoreCase("greet") && store.length == 1) {
-                        System.out.println("Greet who in which language between IsiXhosa/English/Afrikaans?");
-                    } else if (store[0].equalsIgnoreCase("greet") && store.length == 2) {
-                        System.out.println("Greet " + store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " in Which Language?");
-                    } else if (store[0].equalsIgnoreCase("greeted") && store.length == 1) {
+                    } else if (store[0].equalsIgnoreCase("greet") && store.length == 2 ) {
+                        user.addUsers(store[1]);
+                        System.out.println("Hello "+ store[1]);
+                    }else if (store[0].equalsIgnoreCase("greet") && store.length == 1 ) {
+                        System.out.println("Hello ");
+                    }
+                    else if (store[0].equalsIgnoreCase("greeted") && store.length == 1) {
                         user.greetedUsers();
                     } else if(store[0].equalsIgnoreCase("greeted") && store.length == 2){
                         user.getCountForUser( store[1] ); //I CAN'T IGNORECASE FOR NAME ENTERED
-                    } else if (store[0].equalsIgnoreCase("counter") && store.length == 1) {
+                    } else if (store[0].equalsIgnoreCase("counter")) {
                         user.getCountForAllUsers();
                     } else if (store[0].equalsIgnoreCase("clear") && store.length == 1) {
                         user.clearAllUsers();
@@ -59,17 +61,16 @@ public class Greeter {
                         }else
                             System.out.println(store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " not removed!");;
                     } else if (store[0].equalsIgnoreCase("exit") && store.length == 1) {
-
                                 System.out.println("Signing out!!!");
                                 userText.close();
-
                     } else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
                         System.out.println("-*-*-Available Commands-*-*-");
-                        System.out.println("Command : 'Greet' _Name_ _Language_ <");
-                        System.out.println("Command : 'Greeted' -Returns all names");
+                        System.out.println("Command : 'Greet' Mzwa _English_ ");
+                        System.out.println("Command : 'Greeted' - Returns all names");
+                        System.out.println("Command : 'Greeted Mzwa' - Returns how many times Mzwa greeted");
                         System.out.println("Command : 'Clear' -Clears everyone");
-                        System.out.println("Command : 'Clear _name_ - Clear the _name_");
-                        System.out.println("Command : 'Exit' -Exits");
+                        System.out.println("Command : 'Clear Mzwa' - Clears' Mzwa");
+                        System.out.println("Command : 'Exit' - Exits and Stops the program");
                     }
 
 
@@ -79,6 +80,9 @@ public class Greeter {
                         }
                         else if(store.length > 0){
                             System.out.println("Invalid command type 'help' for available commands!");
+                        }
+                        else if(store[0].equalsIgnoreCase("greet")){
+                            System.out.println("WTF!!!");
                         }
                     }
             }
