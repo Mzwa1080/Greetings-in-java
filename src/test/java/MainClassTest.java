@@ -14,7 +14,7 @@ public class MainClassTest {
         greet.execute("greet mzwa English");
 //
         System.out.println(greet.execute("greet mzwa English"));
-
+        user.clearAllUsers();
         assertEquals(greet.execute("greet Mzwa English"),"Hello Mzwa");
     }
 

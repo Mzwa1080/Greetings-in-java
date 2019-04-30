@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36bf9087-c8ba-4a18-8959-414e91f970b9" name="Default Changelist" comment="" />
+    <list default="true" id="36bf9087-c8ba-4a18-8959-414e91f970b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/greet/Greeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/greet/Greeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainClassTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.54891306">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -28,8 +31,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+                <state relative-caret-position="699">
+                  <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
                   <folding>
                     <element signature="e#156#157#0" expanded="true" />
                     <element signature="e#184#185#0" expanded="true" />
@@ -68,8 +71,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+                <state relative-caret-position="240">
+                  <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -122,9 +125,9 @@
         <option value="$PROJECT_DIR$/src/main/java/net/greet/GreetJDBC.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/Greet.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/Languages.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/GetCommands.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/greet/Greeter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/MainClassTest.java" />
       </list>
     </option>
   </component>
@@ -218,7 +221,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556635487327" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556635965584" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AppleEater" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -321,34 +324,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainClassTest - 2019.04.29 at 16h 53m 47s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 37m 14s.xml">
-      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 37m 27s.xml">
-      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 37m 44s.xml">
-      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 37m 56s.xml">
-      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreetUsingGetCommandsClass - 2019.04.30 at 11h 40m 04s.xml">
-      <configuration name="MainClassTest.shouldGreetUsingGetCommandsClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest - 2019.04.30 at 11h 40m 13s.xml">
-      <configuration name="MainClassTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreetUsingGetCommandsClass - 2019.04.30 at 11h 40m 45s.xml">
-      <configuration name="MainClassTest.shouldGreetUsingGetCommandsClass" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 42m 28s.xml">
-      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 11h 42m 44s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 44m 01s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 44m 12s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 44m 27s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 44m 34s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 44m 50s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 49m 19s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 49m 30s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 51m 59s.xml">
+      <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainClassTest_shouldGreet - 2019.04.30 at 16h 52m 10s.xml">
       <configuration name="MainClassTest.shouldGreet" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -363,6 +366,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="25" width="1926" height="1058" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11821086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -578,24 +582,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        <state relative-caret-position="240">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#1782#1859#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/MainClassTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/greet/Greeter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="699">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#184#185#0" expanded="true" />
+            <element signature="e#1782#1859#0" />
           </folding>
         </state>
       </provider>

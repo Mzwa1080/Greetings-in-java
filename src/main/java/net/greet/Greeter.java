@@ -84,7 +84,11 @@ public class Greeter {
         return "Type 'HELP' for more guidance/commands";
     }
     public static void main(String args[]) {
-
+        System.out.println(" _____________________________________");
+        System.out.println("|           Greetings In Java         |");
+        System.out.println("|_____________________________________|");
+        System.out.println("|       e.g 'Greet Shawn IsiXhosa'    |");
+        System.out.println("|_____________________________________|");
         try {
 
             Scanner userText = new Scanner(System.in);
@@ -92,11 +96,7 @@ public class Greeter {
             GreetInterface user = new GreetJDBC(); //---- Interface >> db
 
             Greeter greetings = new Greeter(user);
-            System.out.println(" _____________________________________");
-            System.out.println("|           Greetings In Java         |");
-            System.out.println("|_____________________________________|");
-            System.out.println("|       e.g 'Greet Shawn IsiXhosa'    |");
-            System.out.println("|_____________________________________|");
+
 
             System.out.println("Enter a command: " );
 
