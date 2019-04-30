@@ -102,7 +102,6 @@ public class Greeter {
 
             while (true) {
                 String newCOmmand = userText.nextLine();
-                GetCommands whatevs = new GetCommands(newCOmmand);
                 greetings.execute(newCOmmand);
             }
 

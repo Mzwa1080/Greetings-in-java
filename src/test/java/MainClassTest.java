@@ -15,7 +15,7 @@ public class MainClassTest {
 //
         System.out.println(greet.execute("greet mzwa English"));
 
-        assertEquals(greet.execute("greet mzwa English"),"Hello mzwa");
+        assertEquals(greet.execute("greet Mzwa English"),"Hello Mzwa");
     }
 
     @Test
