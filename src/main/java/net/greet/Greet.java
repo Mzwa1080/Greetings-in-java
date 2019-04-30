@@ -2,7 +2,7 @@ package net.greet;
 
 import java.util.*;
 
-public class Greet {
+public class Greet {  //MUST USE THE INTERFACE
     private Map<String, Integer>users;
 
     public Greet(){

@@ -10,15 +10,13 @@ public enum Languages {
 
 
     Languages(String langs) {
-        try{
+
             this.langs = langs;
-        }catch (IllegalArgumentException ex){
-            ex.printStackTrace();
-        }
+
     }
 
     public String getNames(String user) {
-
+//            System.out.println(langs + user);
             return langs + user;
 
     }
