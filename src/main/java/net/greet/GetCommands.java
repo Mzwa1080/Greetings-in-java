@@ -19,12 +19,22 @@ public class GetCommands {
     }
 
     public String getUsername() {
-        this.username = store[1].substring(0,1).toUpperCase().charAt(0) + store[1].substring(1);
+        try{
+            this.username = store[1].substring(0,1).toUpperCase().charAt(0) + store[1].substring(1);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("Enter a user you want to be greeted!");
+        }
         return username;
+
     }
 
     public String getLanguage() {
-        this.language = store[2].substring(0,1).toUpperCase().charAt(0) + store[2].substring(1);
+        try{
+            this.language = store[2].substring(0,1).toUpperCase().charAt(0) + store[2].substring(1);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            System.out.println("Enter a language you want a user to be greeted in!");
+        }
+
         return language;
     }
 

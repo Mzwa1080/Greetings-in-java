@@ -36,6 +36,7 @@ public class GreetJDBC implements GreetInterface {
     @Override
     public void addUsers(String name) {
         name = name.substring(0,1).toUpperCase().charAt(0) + name.substring(1);
+
         try{
             conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
@@ -54,13 +55,13 @@ public class GreetJDBC implements GreetInterface {
                     ps_Insert.setString(1,name);
                     ps_Insert.setInt(2,1);
                     ps_Insert.execute();
-
                 }else{
                     PreparedStatement ps_counter = conn.prepareStatement(UPDATE_COUNTER);
 //                    ps_counter.setInt(1, +1);
                     ps_counter.setString(1,name);
                     ps_counter.execute();
                 }
+
 
         } catch(SQLException ex){
             ex.printStackTrace();
@@ -136,7 +137,7 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement check_user = conn.prepareStatement(select_user);
             ResultSet rs = check_user.executeQuery(); // 1 => 0
 
-            System.out.println(greetedUser.remove(user));
+//            System.out.println(greetedUser.remove(user));
             greetedUser.remove(user);
 
         } catch (SQLException e) {

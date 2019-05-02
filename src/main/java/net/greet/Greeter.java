@@ -6,52 +6,58 @@ public class Greeter {
 
 
     GreetInterface user;
-    GetCommands builder;
 
     public Greeter(GreetInterface user){
-    this.user = user;
+        this.user = user;
     }
+
 
     public String execute(String command){
 
         GetCommands builder = new GetCommands(command); //USING THE COMMAND BUILDER/GET COMMANDS CLASS
 
-        if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 3) { //3 commands
+        if (builder.getCommand().equalsIgnoreCase("greet")) { //3 commands
             user.addUsers(builder.getUsername());
             String language = builder.getLanguage();
-            if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
-                return (Languages.valueOf(language).getNames(" " + builder.getUsername()));
+            try{
+                if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
+                    return (Languages.valueOf(language).getNames(" " + builder.getUsername()));
+                }
+
+            }catch (NullPointerException ex){
+                System.out.println("e.g: greet 'name' english");
+                return "Hello " + builder.getUsername();
             }
-            else{
-                return ("Please use a valid language....Between English/IsiXhosa/Afrikaans");
-            }
-        } else if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 2) {
-            user.addUsers( builder.getCommand());
+
+        }
+        else if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 2) {
+            user.addUsers( builder.getUsername() );
             return "Hello "+ builder.getUsername();
         }
-        else if (builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 1) {
+
+        else if (builder.getCommand().equalsIgnoreCase("greeted") ) {
             user.greetedUsers();
         }
         else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 2){
-            user.getCountForUser( builder.getUsername() ); //I CAN'T IGNORECASE FOR NAME ENTERED
+            user.getCountForUser( builder.getUsername() );
         }
-//        else if (store[0].equalsIgnoreCase("counter")) {
-//            user.getCountForAllUsers();
-//        }
+        else if (builder.getCommand().equalsIgnoreCase("counter")) {
+            user.getCountForAllUsers();
+        }
         else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 1) {
             user.clearAllUsers();
-            System.out.println("All users are cleared");
+//            System.out.println("All users are cleared");
         }
-//        else if (store[0].equalsIgnoreCase("clear") && store.length == 2) {
-//            if(store[1].contentEquals(store[1])){
-//                user.clearPerUser(store[1]);
-//                System.out.println(store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " has been removed!");
-//            }else
-//                System.out.println(store[1].toUpperCase().substring(0,1).charAt(0) + store[1].substring(1) + " not removed!");;
-//        }
-//        else if (store[0].equalsIgnoreCase("exit") && store.length == 1) {
+        else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
+            if(builder.getUsername().contentEquals(builder.getUsername())){
+                user.clearPerUser(builder.getUsername());
+//                System.out.println(builder.getUsername() + " has been removed!");
+            }else
+                System.out.println(builder.getUsername() + " not available!");
+        }
+//        else if (builder.getCommand().equalsIgnoreCase("exit") && builder.store.length == 1) {
 //            System.out.println("Signing out!!!");
-//            userText.close();
+//
 //        }
 //        else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
 //            System.out.println(" ______________________Available Commands__________________________");
@@ -103,6 +109,12 @@ public class Greeter {
             while (true) {
                 String newCOmmand = userText.nextLine();
                 greetings.execute(newCOmmand);
+
+                System.out.println(greetings.execute(newCOmmand));
+
+//                if(greetings.execute(newCOmmand) == "exit"){
+//                    break;
+//                }
             }
 
         } catch (IllegalStateException e){

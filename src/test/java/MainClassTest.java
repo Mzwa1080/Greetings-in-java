@@ -3,12 +3,14 @@ import net.greet.GreetInterface;
 import net.greet.GreetJDBC;
 import net.greet.Greeter;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.Assert.assertEquals;
 
 public class MainClassTest {
     @Test
-    public void shouldGreet(){
+    public void shouldGreetInEnhglish(){
         GreetInterface user = new GreetJDBC();
         Greeter greet = new Greeter(user);
         greet.execute("greet mzwa English");
@@ -19,14 +21,39 @@ public class MainClassTest {
     }
 
     @Test
-    public void shouldCheckCommands(){
+    public void shouldGreetInIsiXhosa(){
+        GreetInterface user = new GreetJDBC();
+        Greeter greet = new Greeter(user);
+        greet.execute("greet Bhuta isixhosa");
+        user.clearAllUsers();
+        assertEquals(greet.execute("greet Bhuta IsiXhosa"),"Molo Bhuta");
+    }
 
-          GetCommands cmdBuilder = new GetCommands("greet mzwa english");
+    @Test
+    public void shouldGreetInAfrikaans(){
+        GreetInterface user = new GreetJDBC();
+        Greeter greet = new Greeter(user);
+        greet.execute("greet Bhuta isixhosa");
+        user.clearAllUsers();
+        assertEquals(greet.execute("greet Bhuta Afrikaans"),"Goeie dag Bhuta");
+    }
 
-          cmdBuilder.getCommand();
 
-          System.out.println(cmdBuilder.getLanguage());
+    @Test
+    public void shouldCheckGreetCommand(){
+        GetCommands command = new GetCommands("greet Shawn english");
+        assertEquals("Greet",command.getCommand());
+    }
 
-          assertEquals(1,1);
+    @Test
+    public void shouldCheckLanguageCommand(){
+          GetCommands cmdBuilder = new GetCommands("greet Mzwa english");
+          assertEquals("English",cmdBuilder.getLanguage());
+    }
+
+    @Test
+    public void shouldCheckUsernameCommand(){
+        GetCommands command = new GetCommands("greeted Mzwa English");
+        assertEquals("Mzwa", command.getUsername());
     }
 }

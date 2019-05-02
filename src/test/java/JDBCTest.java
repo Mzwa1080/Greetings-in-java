@@ -16,8 +16,6 @@ public class JDBCTest {
     Connection conn;
 
     public Connection getConnection(){
-
-
         try {
             conn = DriverManager.getConnection(GREETINGS_JDBC, username,password);
         } catch (SQLException e) {
@@ -75,6 +73,10 @@ public class JDBCTest {
         check.clearAllUsers();
         check.addUsers("Shawn");
         check.addUsers("Shawn");
+        check.addUsers("Steve");
+        check.addUsers("ben");
+
+        System.out.println(check.greetedUsers());
 
         assertEquals(true,check.greetedUsers().containsKey("Shawn"));
     }
