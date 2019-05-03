@@ -1,11 +1,11 @@
 package net.greet;
 
-public class GetCommands {
+public class CommandBuilder {
 
     private String command,language,username;
      String []store;
 
-    public GetCommands(String command){
+    public CommandBuilder(String command){
         store = command.split(" ");
     }
 
@@ -23,6 +23,7 @@ public class GetCommands {
             this.username = store[1].substring(0,1).toUpperCase().charAt(0) + store[1].substring(1);
         }catch(ArrayIndexOutOfBoundsException ex){
             System.out.println("Enter a user you want to be greeted!");
+            System.out.println("e.g: greet 'name' english");
         }
         return username;
 

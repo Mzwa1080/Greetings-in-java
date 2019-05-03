@@ -14,47 +14,45 @@ public class Greeter {
 
     public String execute(String command){
 
-        GetCommands builder = new GetCommands(command); //USING THE COMMAND BUILDER/GET COMMANDS CLASS
+        CommandBuilder builder = new CommandBuilder(command); //USING THE COMMAND BUILDER/GET COMMANDS CLASS
 
-        if (builder.getCommand().equalsIgnoreCase("greet")) { //3 commands
-            user.addUsers(builder.getUsername());
-            String language = builder.getLanguage();
-            try{
-                if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
-                    return (Languages.valueOf(language).getNames(" " + builder.getUsername()));
+//            try{
+                if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 3) { //3 commands
+                    user.addUsers(builder.getUsername());
+                    String language = builder.getLanguage();
+                    if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
+                        return (Languages.valueOf(language).getNames(" " + builder.getUsername())) ;
+                    }
+                }
+                else if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 2) {
+                    user.addUsers( builder.getUsername() );
+                    return "Hello "+ builder.getUsername();
+                }
+                else if (builder.getCommand().equalsIgnoreCase("greeted") ) {
+                    user.greetedUsers();
+                }
+                else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 1){
+                    user.getCountForUser( builder.getUsername() );
+                }
+                else if (builder.getCommand().equalsIgnoreCase("counter")) {
+                    user.getCountForAllUsers();
+                }
+                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 1) {
+                    user.clearAllUsers();
                 }
 
-            }catch (NullPointerException ex){
-                System.out.println("e.g: greet 'name' english");
-                return "Hello " + builder.getUsername();
-            }
+                else if(builder.getCommand().equalsIgnoreCase("exit")){
+                    System.out.println("BYE");
+                }
 
-        }
-        else if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 2) {
-            user.addUsers( builder.getUsername() );
-            return "Hello "+ builder.getUsername();
-        }
+//                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
+//                    if(builder.getUsername().contentEquals(builder.getUsername())){
+//                        user.clearPerUser(builder.getUsername());
+////                System.out.println(builder.getUsername() + " has been removed!");
+//                    }else
+//                        System.out.println(builder.getUsername() + " not available!");
+//                }
 
-        else if (builder.getCommand().equalsIgnoreCase("greeted") ) {
-            user.greetedUsers();
-        }
-        else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 2){
-            user.getCountForUser( builder.getUsername() );
-        }
-        else if (builder.getCommand().equalsIgnoreCase("counter")) {
-            user.getCountForAllUsers();
-        }
-        else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 1) {
-            user.clearAllUsers();
-//            System.out.println("All users are cleared");
-        }
-        else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
-            if(builder.getUsername().contentEquals(builder.getUsername())){
-                user.clearPerUser(builder.getUsername());
-//                System.out.println(builder.getUsername() + " has been removed!");
-            }else
-                System.out.println(builder.getUsername() + " not available!");
-        }
 //        else if (builder.getCommand().equalsIgnoreCase("exit") && builder.store.length == 1) {
 //            System.out.println("Signing out!!!");
 //
@@ -79,23 +77,32 @@ public class Greeter {
 //
 //        }
 
-        else {
-            if(builder.getCommand().isEmpty()){
-//                            System.out.println();
-            }
-            else if(builder.store.length > 0){
-                return "Invalid command type 'help' for available commands!";
-            }
-        }
-        return "Type 'HELP' for more guidance/commands";
+//                else {
+//                    if(builder.getCommand().isEmpty()){
+////                            System.out.println();
+//                    }
+//                    else if(builder.store.length > 0){
+//                        return "Invalid command type 'help' for available commands!";
+//                    }
+//                }
+
+                else
+                    return "Type 'HELP' for more guidance/commands";
+//            }
+//            catch (NullPointerException ex){
+//                System.out.println();
+//            }
+
+
+        return "LAST RETURN PART WHICH I'M ON IT!!!";
     }
+
     public static void main(String args[]) {
         System.out.println(" _____________________________________");
         System.out.println("|           Greetings In Java         |");
         System.out.println("|_____________________________________|");
         System.out.println("|       e.g 'Greet Shawn IsiXhosa'    |");
         System.out.println("|_____________________________________|");
-        try {
 
             Scanner userText = new Scanner(System.in);
 
@@ -110,18 +117,15 @@ public class Greeter {
                 String newCOmmand = userText.nextLine();
                 greetings.execute(newCOmmand);
 
-                System.out.println(greetings.execute(newCOmmand));
+//                if(greetings.execute(newCOmmand).contains(newCOmmand)){
+                    System.out.println(greetings.execute(newCOmmand));
 
-//                if(greetings.execute(newCOmmand) == "exit"){
+//                }else if (greetings.execute(newCOmmand).contains("exit")){
 //                    break;
 //                }
             }
 
-        } catch (IllegalStateException e){
-            System.out.println(e);
         }
 
-
-
     }
-}
+

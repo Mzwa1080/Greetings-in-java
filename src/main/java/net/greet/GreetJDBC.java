@@ -78,12 +78,12 @@ public class GreetJDBC implements GreetInterface {
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
                 }
-                System.out.println(greetedUser);
+
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
+        System.out.println(greetedUser);
         return greetedUser;
     }
 
