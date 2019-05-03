@@ -16,7 +16,7 @@ public class Greeter {
 
         CommandBuilder builder = new CommandBuilder(command); //USING THE COMMAND BUILDER/GET COMMANDS CLASS
 
-//            try{
+            try{
                 if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 3) { //3 commands
                     user.addUsers(builder.getUsername());
                     String language = builder.getLanguage();
@@ -31,9 +31,9 @@ public class Greeter {
                 else if (builder.getCommand().equalsIgnoreCase("greeted") ) {
                     user.greetedUsers();
                 }
-                else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 1){
-                    user.getCountForUser( builder.getUsername() );
-                }
+//                else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 2){
+//                    user.getCountForUser( builder.getUsername() );
+//                }
                 else if (builder.getCommand().equalsIgnoreCase("counter")) {
                     user.getCountForAllUsers();
                 }
@@ -41,23 +41,23 @@ public class Greeter {
                     user.clearAllUsers();
                 }
 
-                else if(builder.getCommand().equalsIgnoreCase("exit")){
+                else if(builder.getCommand().equalsIgnoreCase("exit") ){
                     System.out.println("BYE");
                 }
 
-//                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
-//                    if(builder.getUsername().contentEquals(builder.getUsername())){
-//                        user.clearPerUser(builder.getUsername());
-////                System.out.println(builder.getUsername() + " has been removed!");
-//                    }else
-//                        System.out.println(builder.getUsername() + " not available!");
-//                }
+                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
+                    if(builder.getUsername().contentEquals(builder.getUsername())){
+                        user.clearPerUser(builder.getUsername());
+//                System.out.println(builder.getUsername() + " has been removed!");
+                    }else
+                        System.out.println(builder.getUsername() + " not available!");
+                }
 
 //        else if (builder.getCommand().equalsIgnoreCase("exit") && builder.store.length == 1) {
 //            System.out.println("Signing out!!!");
 //
 //        }
-//        else if (store[0].equalsIgnoreCase("help") && store.length == 1) {
+//        else if (builder.getCommand().equalsIgnoreCase("help") && builder.store.length == 1) {
 //            System.out.println(" ______________________Available Commands__________________________");
 //            System.out.println("|__________________________________________________________________|");
 //            System.out.println("|Available Languages: IsiXhosa,English,Afrikaans");
@@ -85,16 +85,19 @@ public class Greeter {
 //                        return "Invalid command type 'help' for available commands!";
 //                    }
 //                }
+                else if(builder.getCommand().isEmpty()){
+                    System.out.println(" ");
+                }
 
                 else
                     return "Type 'HELP' for more guidance/commands";
-//            }
-//            catch (NullPointerException ex){
-//                System.out.println();
-//            }
+            }
+            catch (NullPointerException ex){
+                System.out.println();
+            }
 
 
-        return "LAST RETURN PART WHICH I'M ON IT!!!";
+        return " ";
     }
 
     public static void main(String args[]) {
@@ -115,16 +118,10 @@ public class Greeter {
 
             while (true) {
                 String newCOmmand = userText.nextLine();
-                greetings.execute(newCOmmand);
+//                greetings.execute(newCOmmand);
 
-//                if(greetings.execute(newCOmmand).contains(newCOmmand)){
-                    System.out.println(greetings.execute(newCOmmand));
-
-//                }else if (greetings.execute(newCOmmand).contains("exit")){
-//                    break;
-//                }
+                System.out.println(greetings.execute(newCOmmand));
             }
-
         }
 
     }

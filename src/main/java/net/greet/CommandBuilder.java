@@ -13,7 +13,7 @@ public class CommandBuilder {
         try{
             this.command = store[0].substring(0,1).toUpperCase().charAt(0) + store[0].substring(1);
         }catch(StringIndexOutOfBoundsException ex){
-            System.out.println( ex);
+            System.out.println( "Enter 'help' to see available commands!");
         }
         return command;
     }
