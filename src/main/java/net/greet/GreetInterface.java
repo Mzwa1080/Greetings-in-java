@@ -10,5 +10,5 @@ public interface GreetInterface {
      Map<String, Integer> clearPerUser(String user);
      String getCountForUser(String user);
      Map<String, Integer> greetedUsers();
-     void out();
+     void exit();
 }

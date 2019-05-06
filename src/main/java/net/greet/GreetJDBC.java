@@ -62,7 +62,6 @@ public class GreetJDBC implements GreetInterface {
                     ps_counter.execute();
                 }
 
-
         } catch(SQLException ex){
             ex.printStackTrace();
         }
@@ -78,7 +77,6 @@ public class GreetJDBC implements GreetInterface {
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
                 }
-
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -171,8 +169,8 @@ public class GreetJDBC implements GreetInterface {
 
 
     @Override
-    public void out() {
-        System.out.println("Exiting!!!");
+    public void exit() {
+        System.exit(0);
     }
 
 }
