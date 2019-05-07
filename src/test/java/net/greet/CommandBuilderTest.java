@@ -21,7 +21,7 @@ class CommandBuilderTest {
 
         assertEquals("Greet", commandBuilder.getCommand());
         assertEquals("Yegan", commandBuilder.getUsername());
-        assertEquals("Zulu", commandBuilder.getLanguage());
+        assertEquals("Afrikaans", commandBuilder.getLanguage());
     }
 
     @Test
@@ -30,7 +30,7 @@ class CommandBuilderTest {
 
         assertEquals("Greet", commandBuilder.getCommand());
         assertEquals("", commandBuilder.getUsername());
-        assertEquals("Zulu", commandBuilder.getLanguage());
+        assertEquals("Afrikaans", commandBuilder.getLanguage());
     }
 
     @Test
@@ -47,7 +47,7 @@ class CommandBuilderTest {
 
         assertEquals("Greeted", commandBuilder.getCommand());
         assertEquals("", commandBuilder.getUsername());
-        assertEquals("Zulu", commandBuilder.getLanguage());
+        assertEquals("Afrikaans", commandBuilder.getLanguage());
     }
 
     @Test
@@ -56,7 +56,7 @@ class CommandBuilderTest {
 
         assertEquals("Clear", commandBuilder.getCommand());
         assertEquals("Yegan", commandBuilder.getUsername());
-        assertEquals("Zulu", commandBuilder.getLanguage());
+        assertEquals("Afrikaans", commandBuilder.getLanguage());
     }
 
     @Test

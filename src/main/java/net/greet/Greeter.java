@@ -14,8 +14,7 @@ public class Greeter {
 
     public String execute(String command){
 
-        CommandBuilder builder = new CommandBuilder(command); //USING THE COMMAND BUILDER
-
+        CommandBuilder builder = new CommandBuilder(command); //USING THE COMMAND BUILDE
                 if("greet".equalsIgnoreCase(builder.getCommand()) && builder.hasName() ) {
                     user.addUsers(builder.getUsername());
                     return Languages.valueOf(builder.getLanguage()).getNames(" " + builder.getUsername());
@@ -62,19 +61,16 @@ public class Greeter {
         System.out.println("       e.g 'Greet Shawn IsiXhosa'    ");
         System.out.println("  ___________________________________");
 
-            Scanner userText = new Scanner(System.in);
+        Scanner userText = new Scanner(System.in);
+        GreetInterface greet = new GreetJDBC(); //---- Interface >> db
+//      Greet greet = new Greet();
+        Greeter greetings = new Greeter(greet);
 
-            GreetInterface greet = new GreetJDBC(); //---- Interface >> db
-//            Greet greet = new Greet();
-            Greeter greetings = new Greeter(greet);
+        System.out.println("Enter a command: " );
 
-
-            System.out.println("Enter a command: " );
-
-            while (true) {
-                String newCOmmand = userText.nextLine();
-                System.out.println(greetings.execute(newCOmmand));
-
+        while (true) {
+            String newCOmmand = userText.nextLine();
+            System.out.println(greetings.execute(newCOmmand));
             }
         }
     }

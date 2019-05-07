@@ -1,3 +1,5 @@
+package net.greet;
+
 import net.greet.GreetJDBC;
 import org.junit.*;
 import org.junit.jupiter.api.AfterEach;
