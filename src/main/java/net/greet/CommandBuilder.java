@@ -7,23 +7,29 @@ public class CommandBuilder {
 
     public CommandBuilder(String command){
         store = command.split(" ");
+
     }
 
     public String getCommand() {
         try{
-            this.command = store[0].substring(0,1).toUpperCase().charAt(0) + store[0].substring(1);
+            this.command = Capitalize(store[0]);
         }catch(StringIndexOutOfBoundsException ex){
             System.out.println( "Enter 'help' to see available commands!");
         }
         return command;
     }
 
+    private String Capitalize(String store) {
+      return store.substring(0,1).toUpperCase().charAt(0) + store.substring(1);
+    }
+
     public String getUsername() {
         try{
-            this.username = store[1].substring(0,1).toUpperCase().charAt(0) + store[1].substring(1);
+            this.username = Capitalize(store[1]);
         }catch(ArrayIndexOutOfBoundsException ex){
-            System.out.println("Enter a user you want to be greeted!");
-            System.out.println("e.g: greet 'name' english");
+//            System.out.println("Enter a user you want to be greeted!");
+//            System.out.println("e.g: greet 'name' english");
+            this.username = "";
         }
         return username;
 
@@ -31,12 +37,21 @@ public class CommandBuilder {
 
     public String getLanguage() {
         try{
-            this.language = store[2].substring(0,1).toUpperCase().charAt(0) + store[2].substring(1);
+            this.language = Capitalize(store[2]);
         }catch(ArrayIndexOutOfBoundsException ex){
-            System.out.println("Enter a language you want a user to be greeted in!");
+//            System.out.println("Enter a language you want a user to be greeted in!");
+            this.language = "Afrikaans"; //default languge
         }
 
         return language;
+    }
+
+    public boolean hasName(){
+            return !getUsername().isEmpty();
+    }
+
+    public boolean hasLanguage(){
+            return !getLanguage().isEmpty();
     }
 
 

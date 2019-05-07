@@ -16,46 +16,30 @@ public class Greeter {
 
         CommandBuilder builder = new CommandBuilder(command); //USING THE COMMAND BUILDER
 
-            try{
-                if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length ==3 ) {
+                if("greet".equalsIgnoreCase(builder.getCommand()) && builder.hasName() ) {
                     user.addUsers(builder.getUsername());
-                    String language = builder.getLanguage();
-                    if(language.equals("English") || language.equals("Afrikaans") || language.equals("IsiXhosa")){
-                        return (Languages.valueOf(language).getNames(" " + builder.getUsername())) ;
-                    }else
-                        return "Choose language between English/Isixhosa/Afrikaans!";
+                    return Languages.valueOf(builder.getLanguage()).getNames(" " + builder.getUsername());
                 }
-                else if (builder.getCommand().equalsIgnoreCase("greet") && builder.store.length == 2) {
-                    user.addUsers( builder.getUsername() );
-                    return "Hello "+ builder.getUsername();
+                else if("greeted".equalsIgnoreCase(builder.getCommand())){
+                    if (!builder.hasName()){
+                        user.greetedUsers();
+                    }else{
+                        user.getCountForUser(builder.getUsername());
+                    }
                 }
-                else if (builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 1 ) {
-                    user.greetedUsers();
-                }
-                else if(builder.getCommand().equalsIgnoreCase("greeted") && builder.store.length == 2){
-                    user.getCountForUser( builder.getUsername() );
-                }
-                else if (builder.getCommand().equalsIgnoreCase("counter") ) {
+                else if ("counter".equalsIgnoreCase(builder.getCommand())){
                     user.getCountForAllUsers();
                 }
-                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 1) {
-                    user.clearAllUsers();
+                else if("clear".equalsIgnoreCase(builder.getCommand())){
+                    if(builder.hasName()){
+                        user.clearPerUser(builder.getUsername());
+                    }else
+                        user.clearAllUsers();
                 }
-
-                else if(builder.getCommand().equalsIgnoreCase("exit") ){
+                else if("exit".equalsIgnoreCase(builder.getCommand())){
                     user.exit();
                 }
-
-                else if (builder.getCommand().equalsIgnoreCase("clear") && builder.store.length == 2) {
-                    if(builder.getUsername().contentEquals(builder.getUsername())){
-                        user.clearPerUser(builder.getUsername());
-//                System.out.println(builder.getUsername() + " has been removed!");
-                    }else
-                        System.out.println(builder.getUsername() + " not available!");
-                }
-
-
-                else if (builder.getCommand().equalsIgnoreCase("help") && builder.store.length == 1) {
+                else if ("help".equalsIgnoreCase(builder.getCommand())) {
                     System.out.println(" ______________________Available Commands__________________________");
                     System.out.println("|Available Languages: IsiXhosa,English,Afrikaans");
                     System.out.println("|Command : |    [Greet name + English] ");
@@ -65,15 +49,9 @@ public class Greeter {
                     System.out.println("|Command : |    [Clear name] - clears name");
                     System.out.println("|Command : |    [Exit] - exits and stops the program");
                     System.out.println("|__________|_______________________________________________________");
-
                 }
                 else
                     return "Type 'HELP' for more guidance/commands";
-            }
-            catch (NullPointerException ex){
-                System.out.println(ex);
-            }
-
 
         return " ";
     }

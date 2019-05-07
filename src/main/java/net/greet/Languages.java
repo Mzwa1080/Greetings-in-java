@@ -16,7 +16,6 @@ public enum Languages {
     }
 
     public String getNames(String user) {
-//            System.out.println(langs + user);
             return langs + user;
 
     }
