@@ -1,37 +1,16 @@
 package net.greet;
 
-import net.greet.Greet;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class GreetTest {
 
-//    @Test
-//    public void greetUsersInIsixhosa() {
-//        Greet name = new Greet("Mzwa", "IsiXhosa");
-//        assertEquals("Molo Mzwa!", name.greetInLanguage());
-//    }
-//
-//    @Test
-//    public void greetUserInEnglish(){
-//        Greet greetInEnglish = new Greet("Shawn", "English");
-//        assertEquals("Hello Shawn!", greetInEnglish.greetInLanguage());
-//    }
-//
-//    @Test
-//    public void greetUserInAfrikaans(){
-//        Greet greetInAfrikaans = new Greet("Mzwa", "Afrikaans");
-//        assertEquals("Goeie dag Mzwa!", greetInAfrikaans.greetInLanguage());
-//    }
-
     @Test
     public void getAllUsers(){
         Greet user = new Greet();
         user.addUsers("Mzwa");
     }
-
-
     @Test
     public void addUsersAndCountEveryUser(){
         Greet user = new Greet();
@@ -41,7 +20,6 @@ public class GreetTest {
 
         assertEquals(user.getCountForAllUsers(),3);
     }
-
     @Test
     public void howManyTimesSingleUserRepeated(){
         Greet user1 = new Greet();
@@ -51,10 +29,8 @@ public class GreetTest {
         user1.addUsers("Mzwa");
         user1.addUsers("Tzoo");
 
-        assertEquals(user1.getCountForUser("Mzwa"),4);
+        assertEquals(user1.getCountForUser("Mzwa"),"Mzwa has been greeted 4");
     }
-
-
     @Test
     public void clearAllUsers(){
         Greet clearUsers = new Greet();
@@ -68,7 +44,6 @@ public class GreetTest {
 
         assertEquals(clearUsers.getCountForAllUsers(), 0);
     }
-
     @Test
     public void clearUserEach(){
         Greet clearUser = new Greet();
@@ -77,25 +52,7 @@ public class GreetTest {
         clearUser.addUsers("Sakhi");
 
         clearUser.clearPerUser("Mzwa");
-//        System.out.println(clearUser.clearPerUser("Mzwa"));
-//        System.out.println(clearUser.getCountForAllUsers());
+
         assertEquals(clearUser.getCountForAllUsers(),2);
     }
-
-//    @Test
-//    public void clearUserValue(){
-//        Greet clearValue  = new Greet();
-//        clearValue.addUsers("Mzwa");
-//        clearValue.addUsers("Mzwa");
-//        clearValue.addUsers("Mzwa");
-//        clearValue.addUsers("Shawn");
-//        clearValue.addUsers("Shawn");
-//
-//        System.out.println(clearValue.clearUsersValue("Mzwa"));
-//        System.out.println(clearValue.clearUsersValue("Mzwa"));
-//
-//
-//        assertEquals(1,1);
-//    }
-
 }

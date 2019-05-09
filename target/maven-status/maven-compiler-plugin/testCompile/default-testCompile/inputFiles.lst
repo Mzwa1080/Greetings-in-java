@@ -1,2 +1,3 @@
-/home/mzwa/Desktop/java/Greetings-in-java/src/test/java/JDBCTest.java
-/home/mzwa/Desktop/java/Greetings-in-java/src/test/java/GreetTest.java
+/home/mzwa/Desktop/java/Greetings-in-java/src/test/java/net/greet/JDBCTest.java
+/home/mzwa/Desktop/java/Greetings-in-java/src/test/java/net/greet/CommandBuilderTest.java
+/home/mzwa/Desktop/java/Greetings-in-java/src/test/java/net/greet/GreetTest.java

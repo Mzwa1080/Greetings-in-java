@@ -7,7 +7,6 @@ public class CommandBuilder {
 
     public CommandBuilder(String command){
         store = command.split(" ");
-
     }
 
     public String getCommand() {
@@ -27,19 +26,15 @@ public class CommandBuilder {
         try{
             this.username = Capitalize(store[1]);
         }catch(ArrayIndexOutOfBoundsException ex){
-//            System.out.println("Enter a user you want to be greeted!");
-//            System.out.println("e.g: greet 'name' english");
             this.username = "";
         }
         return username;
-
     }
 
     public String getLanguage() {
         try{
             this.language = Capitalize(store[2]);
         }catch(ArrayIndexOutOfBoundsException ex){
-//            System.out.println("Enter a language you want a user to be greeted in!");
             this.language = "Afrikaans"; //default languge
         }
 
@@ -53,6 +48,4 @@ public class CommandBuilder {
     public boolean hasLanguage(){
             return !getLanguage().isEmpty();
     }
-
-
 }

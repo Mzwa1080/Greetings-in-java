@@ -8,24 +8,12 @@ public enum Languages {
 
     private String langs;
 
-
     Languages(String langs) {
-
             this.langs = langs;
-
     }
 
     public String getNames(String user) {
             return langs + user;
 
     }
-
-    public String defaultMethod(String name){
-
-
-        return "Molo " + name;
-    }
-
-
-
 }

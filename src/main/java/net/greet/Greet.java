@@ -2,14 +2,14 @@ package net.greet;
 
 import java.util.*;
 
-public class Greet {  //MUST USE THE INTERFACE
+public class Greet implements GreetInterface {
     private Map<String, Integer>users;
 
     public Greet(){
         users = new HashMap<>();
     }
-
-    public Map<String, Integer> addUsers(String perUser){
+    @Override
+    public void addUsers(String perUser){
         perUser = perUser.toUpperCase().substring(0,1).charAt(0) + perUser.substring(1);
         if(users.containsKey(perUser)){
             int count = users.get(perUser);
@@ -18,40 +18,40 @@ public class Greet {  //MUST USE THE INTERFACE
         else {
             users.put(perUser,1);
         }
-        return users;
     }
 
-
+    @Override
     public int getCountForAllUsers(){
         int count = users.size();
         System.out.println(count);
         return count;
     }
-
-    public int getCountForUser(String user){
+    @Override
+    public String getCountForUser(String user){
         user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
-        System.out.println(user + " has been greeted " +users.get(user)+"time(s)");
-        return users.get(user);
+        System.out.println(user + " has been greeted " +users.get(user)+" time(s)");
+        return user + " has been greeted "+ users.get(user);
     }
 
     public void clearAllUsers() {
         users.clear();
     }
-
-    public int clearPerUser(String user) {
+    @Override
+    public Map<String, Integer> clearPerUser(String user) {
         user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
-        return users.remove(user);
-
+        System.out.println(users.remove(user));
+        return users;
     }
-
-    public void greetedUsers(){
+    @Override
+    public Map<String, Integer> greetedUsers(){
         System.out.println(users);
-    }
-    public void out(){
-        System.out.println("Exiting!");
+        return users;
     }
 
-
+    @Override
+    public void exit() {
+    System.exit(0);
+    }
 }
 
 

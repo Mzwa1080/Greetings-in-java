@@ -68,9 +68,23 @@ class CommandBuilderTest {
     }
 
     @Test
-    void hasNameFalse(){
+    void hasNoName(){
         CommandBuilder commandBuilder = new CommandBuilder("clear");
         assertEquals(commandBuilder.hasName(), false);
-
     }
+
+
+    @Test
+    void hasLanguage(){
+        CommandBuilder commandBuilder = new CommandBuilder("clear yegan");
+
+        assertEquals(commandBuilder.hasLanguage(), true);
+    }
+
+    @Test
+    void hasNoLanguage(){
+        CommandBuilder commandBuilder = new CommandBuilder("clear");
+        assertEquals(commandBuilder.hasName(), false);
+    }
+
 }
