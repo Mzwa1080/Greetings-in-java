@@ -28,8 +28,12 @@ public class Greet implements GreetInterface {
     }
     @Override
     public String getCountForUser(String user){
-        user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
-        System.out.println(user + " has been greeted " +users.get(user)+" time(s)");
+        if(users.containsKey(user)){
+            user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
+            System.out.println(user + " has been greeted " +users.get(user)+" time(s)");
+        }else
+            System.out.println(user + " has been greeted " + 0 + " time(s)");
+
         return user + " has been greeted "+ users.get(user);
     }
 
@@ -38,8 +42,12 @@ public class Greet implements GreetInterface {
     }
     @Override
     public Map<String, Integer> clearPerUser(String user) {
-        user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
-        System.out.println(users.remove(user));
+        if(users.remove(user) != null){
+            user = user.toUpperCase().substring(0,1).charAt(0) + user.substring(1);
+            System.out.println(users.remove(user));
+        }else
+            System.out.println("There's no " + user);
+
         return users;
     }
     @Override

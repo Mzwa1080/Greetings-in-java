@@ -1,6 +1,5 @@
 package net.greet;
 
-
 public enum Languages {
     Afrikaans("Goeie dag"),
     English("Hello"),
@@ -14,6 +13,9 @@ public enum Languages {
 
     public String getNames(String user) {
             return langs + user;
-
     }
+
+//    public boolean containsLanguage(){
+//        return !L
+//    }
 }

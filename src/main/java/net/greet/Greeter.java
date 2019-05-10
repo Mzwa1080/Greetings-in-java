@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Greeter {
 
-
+    private static GreetInterface greet;
     GreetInterface user;
 
     public Greeter(GreetInterface user){
@@ -14,10 +14,16 @@ public class Greeter {
 
     public String execute(String command){
 
-        CommandBuilder builder = new CommandBuilder(command); 
+        CommandBuilder builder = new CommandBuilder(command);
                 if("greet".equalsIgnoreCase(builder.getCommand()) && builder.hasName() ) {
                     user.addUsers(builder.getUsername());
-                    return Languages.valueOf(builder.getLanguage()).getNames(" " + builder.getUsername());
+
+                    try{
+                        return Languages.valueOf(builder.getLanguage()).getNames(" " + builder.getUsername());
+
+                    }catch(IllegalArgumentException e){
+                        System.out.println("Available languages are English/Afrikaans & Isixhosa!");
+                    }
                 }
                 else if("greeted".equalsIgnoreCase(builder.getCommand())){
                     if (!builder.hasName()){
@@ -62,13 +68,13 @@ public class Greeter {
         System.out.println("  ___________________________________");
 
         Scanner userText = new Scanner(System.in);
-        GreetInterface greet = new GreetJDBC();
-//      Greet greet = new Greet();
+         greet = new GreetJDBC();
+//         greet = new Greet();
         Greeter greetings = new Greeter(greet);
 
-        System.out.println("Enter a command: " );
 
         while (true) {
+            System.out.println("Enter a command:" );
             String newCOmmand = userText.nextLine();
             System.out.println(greetings.execute(newCOmmand));
             }
