@@ -55,7 +55,6 @@ public class Greet implements GreetInterface {
         System.out.println(users);
         return users;
     }
-
     @Override
     public void exit() {
     System.exit(0);

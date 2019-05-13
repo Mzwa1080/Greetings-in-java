@@ -14,5 +14,4 @@ public enum Languages {
     public String getNames(String user) {
             return langs + user;
     }
-    
 }

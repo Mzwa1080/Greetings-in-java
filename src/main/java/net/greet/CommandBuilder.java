@@ -3,12 +3,11 @@ package net.greet;
 public class CommandBuilder {
 
     private String command,language,username;
-     String []store;
+    private String [] store;
 
     public CommandBuilder(String command){
         store = command.split(" ");
     }
-
     public String getCommand() {
         try{
             this.command = Capitalize(store[0]);
@@ -17,7 +16,6 @@ public class CommandBuilder {
         }
         return command;
     }
-
     private String Capitalize(String store) {
       return store.substring(0,1).toUpperCase().charAt(0) + store.substring(1);
     }

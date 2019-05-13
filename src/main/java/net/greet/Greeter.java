@@ -11,7 +11,6 @@ public class Greeter {
         this.user = user;
     }
 
-
     public String execute(String command){
 
         CommandBuilder builder = new CommandBuilder(command);
@@ -71,7 +70,6 @@ public class Greeter {
          greet = new GreetJDBC();
 //         greet = new Greet();
         Greeter greetings = new Greeter(greet);
-
 
         while (true) {
             System.out.println("Enter a command:" );
