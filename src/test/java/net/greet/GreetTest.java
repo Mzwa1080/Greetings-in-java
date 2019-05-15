@@ -29,7 +29,7 @@ public class GreetTest {
         user1.addUsers("Mzwa");
         user1.addUsers("Tzoo");
 
-        assertEquals(user1.getCountForUser("Mzwa"),"Mzwa has been greeted 4");
+        assertEquals(user1.getCountForUser("Mzwa"),"Mzwa has been greeted 4 time(s)");
     }
     @Test
     public void clearAllUsers(){
