@@ -74,15 +74,12 @@ public class GreetJDBC implements GreetInterface {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        System.out.println(greetedUser);
         return greetedUser;
     }
 
     @Override
     public int getCountForAllUsers() {
         conn = getConnection();
-        System.out.println(greetedUser.size());
-
         return greetedUser.size();
     }
 
@@ -133,9 +130,9 @@ public class GreetJDBC implements GreetInterface {
             count.execute();
 
             if(greetedUser.containsKey(user)){
-                System.out.println(user + " has been greeted "+ greetedUser.get(user) + " time(s)");
+                return user + " has been greeted "+ greetedUser.get(user) + " time(s)";
             }else
-            System.out.println(user + " has been greeted " + 0 + " time(s)");
+            return user + " has been greeted " + 0 + " time(s)";
 
 
         } catch (SQLException e) {
