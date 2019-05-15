@@ -80,6 +80,7 @@ public class GreetJDBC implements GreetInterface {
     @Override
     public int getCountForAllUsers() {
         conn = getConnection();
+
         return greetedUser.size();
     }
 
@@ -100,7 +101,7 @@ public class GreetJDBC implements GreetInterface {
     }
 
     @Override
-    public Map<String, Integer> clearPerUser(String user) {
+    public  String clearPerUser(String user) {
         user = user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
         conn = getConnection();
         String remove_one = "delete from users where name = ? ";
@@ -115,7 +116,7 @@ public class GreetJDBC implements GreetInterface {
             e.printStackTrace();
         }
 
-         return greetedUser;
+         return greetedUser.toString();
     }
 
     @Override
@@ -145,5 +146,6 @@ public class GreetJDBC implements GreetInterface {
     public void exit() {
         System.exit(0);
     }
+
 
 }

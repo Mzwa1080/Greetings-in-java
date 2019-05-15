@@ -1,7 +1,7 @@
 package net.greet;
 
 public class Executor {
-    GreetInterface user;
+    private GreetInterface user;
 
     public Executor(GreetInterface user){
         this.user = user;
@@ -19,17 +19,17 @@ public class Executor {
         }
         else if("greeted".equalsIgnoreCase(builder.getCommand())){
             if (!builder.hasName()){
-                user.greetedUsers();
+                return String.valueOf(user.greetedUsers());
             }else{
-                user.getCountForUser(builder.getUsername());
+                 return user.getCountForUser(builder.getUsername());
             }
         }
         else if ("counter".equalsIgnoreCase(builder.getCommand())){
-            user.getCountForAllUsers();
+                 return String.valueOf(user.getCountForAllUsers());
         }
         else if("clear".equalsIgnoreCase(builder.getCommand())){
             if(builder.hasName()){
-                user.clearPerUser(builder.getUsername());
+                return String.valueOf(user.clearPerUser(builder.getUsername())); //OR SHOULD'VE USE .toString()
             }else
                 user.clearAllUsers();
         }
@@ -37,6 +37,7 @@ public class Executor {
             user.exit();
         }
         else if ("help".equalsIgnoreCase(builder.getCommand())) {
+
             System.out.println(" ______________________Available Commands__________________________");
             System.out.println("|Available Languages: IsiXhosa,English,Afrikaans");
             System.out.println("|Command : |    [Greet name + English] ");

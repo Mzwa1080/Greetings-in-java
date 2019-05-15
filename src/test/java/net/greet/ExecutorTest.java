@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ExecutorTest {
 
     @Test
-    public void shouldGreetShawn(){
+    public void shouldGreetShawnInEnglish(){
         Executor greet = new Executor(new GreetJDBC());
 
         CommandBuilder commandBuilder = new CommandBuilder("greet shawn english");
@@ -17,12 +17,13 @@ public class ExecutorTest {
         assertEquals(greet.execute(commandBuilder),"Hello Shawn");
     }
 
+
     @Test
     public void shouldShowGreetedUsers(){
         Executor greet = new Executor(new GreetJDBC());
 
-        CommandBuilder commandBuilder = new CommandBuilder("greet shawn");
-        System.out.println(greet.execute(commandBuilder));
-//        assertEquals(greet.execute(commandBuilder),"Hello Shawn");
+        CommandBuilder commandBuilder = new CommandBuilder("greeted shawn");
+//        System.out.println(commandBuild);
+        assertEquals(greet.execute(commandBuilder), "Goeie dag Shawn");
     }
 }

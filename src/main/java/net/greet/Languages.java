@@ -3,7 +3,7 @@ package net.greet;
 public enum Languages {
     Afrikaans("Goeie dag"),
     English("Hello"),
-    IsiXhosa("Molo");
+    Isixhosa("Molo");
 
     private String langs;
 

@@ -8,8 +8,6 @@ public class Greeter {
 
     private GreetInterface user;
 
-    private Executor execute;
-
     public Greeter(GreetInterface user){
         this.user = user;
     }
@@ -22,9 +20,10 @@ public class Greeter {
         System.out.println("  ___________________________________");
 
         Scanner userText = new Scanner(System.in);
-         greet = new GreetJDBC();
-//         greet = new Greet();
-        Greeter greetings = new Greeter(greet);
+//         greet = new GreetJDBC();
+         greet = new Greet();
+
+        Executor executor = new Executor(greet);
 
         while (true) {
             System.out.println("Enter a command:" );
@@ -32,7 +31,8 @@ public class Greeter {
 
             CommandBuilder commandBuilder = new CommandBuilder(userCommand);
 
-            System.out.println(greetings.execute.execute( commandBuilder ) );
+            System.out.println(executor.execute(commandBuilder));
+
             }
         }
 }
