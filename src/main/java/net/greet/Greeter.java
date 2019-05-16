@@ -5,13 +5,7 @@ import java.util.*;
 public class Greeter {
 
     private static GreetInterface greet;
-
-    private GreetInterface user;
-
-    public Greeter(GreetInterface user){
-        this.user = user;
-    }
-
+    
 
     public static void main(String args[]) {
         System.out.println("           Greetings In Java         ");
@@ -20,8 +14,8 @@ public class Greeter {
         System.out.println("  ___________________________________");
 
         Scanner userText = new Scanner(System.in);
-//         greet = new GreetJDBC();
-         greet = new Greet();
+         greet = new GreetJDBC();
+//         greet = new Greet();
 
         Executor executor = new Executor(greet);
 
