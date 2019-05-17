@@ -1,5 +1,7 @@
 package net.greet;
 
+import org.h2.jdbc.JdbcSQLSyntaxErrorException;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -111,7 +113,7 @@ public class GreetJDBC implements GreetInterface {
     @Override
     public String getCountForUser(String user){
         conn = getConnection();
-        String count_per_user = "select count(*) from users where name = ?";
+        String count_per_user = "select * from users where name = ?";
 
         try {
             PreparedStatement count = conn.prepareStatement(count_per_user);
@@ -119,7 +121,7 @@ public class GreetJDBC implements GreetInterface {
             ResultSet rs = count.executeQuery();
 
             if(rs.next()){
-                return user + " has been greeted "+ rs.getInt("counter") + " time(s)";
+                    return user + " has been greeted "+ rs.getInt("counter") + " time(s)";
             }
 
 
@@ -128,7 +130,6 @@ public class GreetJDBC implements GreetInterface {
 
         }
         return user + " has been greeted 0 time(s)" ;
-
     }
 
     @Override
