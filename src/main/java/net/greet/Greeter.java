@@ -5,7 +5,6 @@ import java.util.*;
 public class Greeter {
 
     private static GreetInterface greet;
-    
 
     public static void main(String args[]) {
         System.out.println("           Greetings In Java         ");
@@ -21,6 +20,7 @@ public class Greeter {
 
         while (true) {
             System.out.println("Enter a command:" );
+
             String userCommand = userText.nextLine();
 
             CommandBuilder commandBuilder = new CommandBuilder(userCommand);
@@ -30,4 +30,3 @@ public class Greeter {
             }
         }
 }
-

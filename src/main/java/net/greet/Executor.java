@@ -37,7 +37,6 @@ public class Executor {
             user.exit();
         }
         else if ("help".equalsIgnoreCase(builder.getCommand())) {
-
             System.out.println(" ______________________Available Commands__________________________");
             System.out.println("|Available Languages: IsiXhosa,English,Afrikaans");
             System.out.println("|Command : |    [Greet name + English] ");

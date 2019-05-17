@@ -9,12 +9,9 @@ public class GreetJDBC implements GreetInterface {
     String jdbcURL = "jdbc:h2:file:./target/greetings-in-java";
     final String username = "";
     final String password = "";
-    final Map<String, Integer> greetedUser = new HashMap<>();
 
 
     public Connection getConnection() {
-        conn = null;
-
         try {
             Class.forName("org.h2.Driver");
             try {
@@ -26,13 +23,10 @@ public class GreetJDBC implements GreetInterface {
             e.printStackTrace();
         }
         return conn;
-
     }
 
     @Override
     public void addUsers(String name) {
-        name = name.substring(0,1).toUpperCase().charAt(0) + name.substring(1);
-
         try{
             conn = getConnection();
             final String INSERT_USERNAMES = "insert into users(name,counter) values(?,?)";
@@ -41,7 +35,6 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement ps_Insert = conn.prepareStatement(INSERT_USERNAMES);
             PreparedStatement rsCheck = conn.prepareStatement("select * from users where name = ?");
             rsCheck.setString(1,name);
-            rsCheck.execute();
 
             ResultSet rs = rsCheck.executeQuery();
 
@@ -63,10 +56,13 @@ public class GreetJDBC implements GreetInterface {
     @Override
     public Map<String, Integer> greetedUsers() {
          conn =  getConnection();
+        final Map<String, Integer> greetedUser = new HashMap<>();
 
             try {
-                Statement stmnt = conn.createStatement();
-                ResultSet rs = stmnt.executeQuery("select * from users");
+                String select_users = "select * from users";
+                PreparedStatement ps = conn.prepareStatement(select_users);
+
+                ResultSet rs = ps.executeQuery();
                 while(rs.next()){
                     greetedUser.put(rs.getString("name"), rs.getInt("counter"));
                 }
@@ -79,9 +75,7 @@ public class GreetJDBC implements GreetInterface {
 
     @Override
     public int getCountForAllUsers() {
-        conn = getConnection();
-
-        return greetedUser.size();
+        return greetedUsers().size();
     }
 
     @Override
@@ -90,19 +84,16 @@ public class GreetJDBC implements GreetInterface {
         String CLEAR_EVERYONE = "delete from users";
 
         try {
-            PreparedStatement psClear = conn.prepareStatement(CLEAR_EVERYONE);
-            psClear.execute();
-            greetedUser.clear();
+            PreparedStatement ps = conn.prepareStatement(CLEAR_EVERYONE);
+            ps.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-            greetedUser.clear();
     }
 
     @Override
     public  String clearPerUser(String user) {
-        user = user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
         conn = getConnection();
         String remove_one = "delete from users where name = ? ";
 
@@ -110,36 +101,34 @@ public class GreetJDBC implements GreetInterface {
             PreparedStatement remove_user = conn.prepareStatement(remove_one);
             remove_user.setString(1,user);
             remove_user.execute();
-            greetedUser.remove(user);
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-         return greetedUser.toString();
+         return greetedUsers().toString();
     }
 
     @Override
     public String getCountForUser(String user){
-        user = user.substring(0,1).toUpperCase().charAt(0) + user.substring(1);
         conn = getConnection();
         String count_per_user = "select count(*) from users where name = ?";
 
         try {
             PreparedStatement count = conn.prepareStatement(count_per_user);
             count.setString(1,user);
-            count.execute();
+            ResultSet rs = count.executeQuery();
 
-            if(greetedUser.containsKey(user)){
-                return user + " has been greeted "+ greetedUser.get(user) + " time(s)";
-            }else
-            return user + " has been greeted " + 0 + " time(s)";
+            if(rs.next()){
+                return user + " has been greeted "+ rs.getInt("counter") + " time(s)";
+            }
 
 
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
-        return user + " has been greeted "+ greetedUser.get(user) + " time(s)" ;
+        return user + " has been greeted 0 time(s)" ;
+
     }
 
     @Override
