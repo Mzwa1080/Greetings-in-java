@@ -17,7 +17,7 @@ public class CommandBuilder {
         return command;
     }
     private String Capitalize(String store) {
-      return store.substring(0,1).toUpperCase().charAt(0) + store.substring(1);
+      return store.substring(0,1).toUpperCase().charAt(0) + store.substring(1).toLowerCase();
     }
 
     public String getUsername() {

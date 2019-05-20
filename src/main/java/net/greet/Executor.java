@@ -37,15 +37,16 @@ public class Executor {
             user.exit();
         }
         else if ("help".equalsIgnoreCase(builder.getCommand())) {
-            System.out.println(" ______________________Available Commands__________________________");
+            System.out.println(" _________________________________ Available Commands __________________________________");
             System.out.println("|Available Languages: IsiXhosa,English,Afrikaans");
-            System.out.println("|Command : |    [Greet name + English] ");
-            System.out.println("|Command : |    [Greeted] - returns all names");
-            System.out.println("|Command : |[Greeted name] - returns how many times name greeted");
-            System.out.println("|Command : |    [Clear] - clears everyone");
-            System.out.println("|Command : |    [Clear name] - clears name");
-            System.out.println("|Command : |    [Exit] - exits and stops the program");
-            System.out.println("|__________|_______________________________________________________");
+            System.out.println("|Command            : |    [Greet name + English] ");
+            System.out.println("|Command            : |    [Greeted]   - returns all users that have been greeted");
+            System.out.println("|Command            : |    [Greeted name]- returns how many times a user has been greeted");
+            System.out.println("|Command            : |    [Clear]     - clears greeted users");
+            System.out.println("|Command            : |    [Clear name]- clears greeted user");
+            System.out.println("|Command            : |    [Counrer]   - counts users that has been greeted");
+            System.out.println("|Command            : |    [Exit]      - exits and stops the program");
+            System.out.println("|___________________: |___________________________________________________________________");
         }
         else
             return "Type 'HELP' for more guidance/commands";
